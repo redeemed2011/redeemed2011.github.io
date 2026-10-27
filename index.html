@@ -319,7 +319,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
     <ul>
       <li>Reads each employer's careers site broadly, then filters by fixed titles and rules. Covers Greenhouse, Lever, Ashby, Workday, Oracle, Phenom, Avature, and SmartRecruiters job feeds.</li>
       <li>Splits searches that pass Workday's 2,000-result cap, so large employers are read in full.</li>
-      <li>Sends only sites that block scripts to a browser agent, with spaced, backed-off requests.</li>
+      <li>Sends only sites that block scripts to a browser agent running typesafe.ai's Jev, with spaced, backed-off requests.</li>
       <li>Checks mail at 6:30 AM and 4 PM CT each weekday through a read-only mail agent. It reads full threads in Inbox, Sent, Trash, and Spam, so recruiter replies update each role's status.</li>
       <li>Shows every dropped role with its reason instead of hiding it. Shows posted pay, and adds a yearly figure for hourly pay.</li>
     </ul>
@@ -376,9 +376,9 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
     <p class="meta">Each model has a specific job, and some jobs have a fallback.</p>
     <div class="model"><p><strong>Coding:</strong> xAI's Grok Build coding agent, run through my own sandboxed launcher, and the Pi coding agent with pi-toolbag. Pi's failover chain, in order: GLM-5.3 on Baseten, Grok through SuperGrok, Grok through the xAI API, Anthropic's Fable, Claude Opus, then Claude Sonnet.</p></div>
     <div class="model"><p><strong>Planning and review (personal work):</strong> Grok.</p></div>
-    <div class="model"><p><strong>Browser control and data-ingest decisions (personal work):</strong> typesafe.ai's Jev.</p></div>
+    <div class="model"><p><strong>Browser agent and data-ingest decisions (personal work):</strong> typesafe.ai's Jev.</p></div>
     <div class="model"><p><strong>Garage assistant receipt reading (Cloudflare Workers AI):</strong> Llama 4 Scout 17B, Mistral Small 3.1 24B, and Llama 3.2 11B Vision read each receipt in parallel, and each field is decided by majority vote.</p></div>
-    <div class="model"><p><strong>Photo or document?</strong> Llama 3.2 11B Vision plus ResNet-50 decide whether an upload is a document to read in full or a photo to describe.</p></div>
+    <div class="model"><p><strong>Telling photos from documents (garage assistant):</strong> Llama 3.2 11B Vision plus ResNet-50 decide whether an upload is a document to read in full or a photo to describe.</p></div>
     <div class="model"><p><strong>Voice notes:</strong> Whisper large-v3-turbo transcribes, with Deepgram Nova-3 as the fallback.</p></div>
     <div class="model"><p><strong>At work:</strong> Astra/Terra, plus Fable, Opus, and Sonnet. I'm evaluating OpenAI's Decisions model for alerts, Kubernetes events, and log lines.</p></div>
   </section>
