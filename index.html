@@ -59,8 +59,6 @@ h3 { font-family: var(--mono); font-size: 0.75rem; margin: 20px 0 8px; text-tran
 .lede { font-weight: 600; color: var(--text); margin: 0 0 12px; font-size: 1.02rem; }
 .arch { font-family: var(--mono); font-size: 0.8rem; line-height: 1.6; color: #cfe9d9; background: #0a0d10; border: 1px solid var(--line); border-left: 2px solid var(--accent);
   border-radius: 10px; padding: 12px 14px; margin: 16px 0 0; }
-.limits { font-size: 0.88rem; color: var(--muted); margin: 18px 0 0; padding: 10px 12px; background: var(--panel-2); border: 1px dashed var(--line-2); border-radius: 10px; }
-.limits strong { font-family: var(--mono); color: #ffcf70; font-weight: 600; }
 ul { margin: 0; padding-left: 1.15em; }
 li { margin: 0 0 8px; color: var(--muted); }
 li::marker { color: var(--accent); }
@@ -127,7 +125,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
         <li>Covers software delivery, on-call management, and tooling, not only code.</li>
       </ul>
       <ul class="chips"><li>LLM agents</li><li>Critic agents</li><li>Agent orchestration</li><li>Hybrid LLM + deterministic workflows</li><li>Linear</li><li>Pull requests</li></ul>
-      <p class="limits"><strong>Limits:</strong> built for private work, so the code, tickets, and pull requests can't be shown.</p>
     </section>
 
 
@@ -147,7 +144,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
         <li>100% more meaningful code and review contributions in a single quarter.</li>
       </ul>
       <ul class="chips"><li>Claude</li><li>Copilot</li><li>Gemini</li><li>Agent orchestration</li><li>Container sandbox</li></ul>
-      <p class="limits"><strong>Limits:</strong> employer work. Code and screenshots stay private.</p>
     </section>
 
     <section id="k8s-reliability">
@@ -168,7 +164,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
         <li>50%+ faster node provisioning.</li>
       </ul>
       <ul class="chips"><li>AWS EKS</li><li>Karpenter</li><li>Kyverno</li><li>Grafana</li><li>Prometheus / Thanos</li></ul>
-      <p class="limits"><strong>Limits:</strong> employer work. Code and screenshots stay private.</p>
     </section>
 
     <section id="iac-platform">
@@ -182,7 +177,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
         <li>Plans, applies, and retries run automatically, with manual triggers when an engineer needs one.</li>
       </ul>
       <ul class="chips"><li>Terraform</li><li>GitHub Actions</li><li>Kyverno</li><li>OPA</li></ul>
-      <p class="limits"><strong>Limits:</strong> employer work. Code and screenshots stay private.</p>
     </section>
 
     <section id="ci-platform">
@@ -203,7 +197,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
         <li>Internal developer platform adopted by all engineers.</li>
       </ul>
       <ul class="chips"><li>GitLab CI</li><li>Terraform</li><li>Vault</li><li>AWS ECS</li><li>Kubernetes</li></ul>
-      <p class="limits"><strong>Limits:</strong> employer work. Code and screenshots stay private.</p>
     </section>
 
     <section id="k8s-migration">
@@ -217,7 +210,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
         <li>Developed IaC tooling that automates brittle repairs, such as certificate uploads, DNS mirroring, and Artifactory migrations, preventing outages from expired certificates.</li>
       </ul>
       <ul class="chips"><li>Kubernetes</li><li>AWS</li><li>DNS</li><li>Artifactory</li></ul>
-      <p class="limits"><strong>Limits:</strong> employer work. Code and screenshots stay private.</p>
     </section>
   </div>
 
@@ -248,7 +240,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
       <li>Designed to run on Cloudflare's $5-a-month Workers plan.</li>
     </ul>
     <ul class="chips"><li>Cloudflare Workers</li><li>D1</li><li>R2</li><li>Queues</li><li>Workers AI</li><li>Slack API</li><li>Cucumber BDD</li></ul>
-    <p class="limits"><strong>Limits:</strong> built for one garage's build crew and workflow. Invoicing stays in the garage's accounting software.</p>
   </section>
 
   <section id="pi-toolbag">
@@ -264,7 +255,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
       <li>Usage-cap gates switch away before a model hits its limit and switch back once usage recovers.</li>
     </ul>
     <ul class="chips"><li>TypeScript</li><li>Pi coding agent</li><li>Vitest</li><li>BDD</li></ul>
-    <p class="limits"><strong>Limits:</strong> built for the Pi coding agent. CTX uses typed records, not embeddings or similarity search.</p>
   </section>
 
   <section id="harness">
@@ -280,7 +270,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
       <li>An idempotent installer, so setup is safe to run again.</li>
     </ul>
     <ul class="chips"><li>Grok Build</li><li>Agent skills</li><li>Lifecycle hooks</li><li>AGENTS.md</li></ul>
-    <p class="limits"><strong>Limits:</strong> built for xAI's Grok Build coding agent. The code is private.</p>
   </section>
   </div>
 
@@ -303,7 +292,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
     <h3>Numbers</h3>
     <ul><li>More than 20 specialized agents, plus a daily 7 AM briefing on email, calendar, tasks, orders, weather, and job matches.</li></ul>
     <ul class="chips"><li>Python</li><li>Chrome DevTools Protocol</li><li>browser-use</li><li>Scheduled routines</li></ul>
-    <p class="limits"><strong>Limits:</strong> built for one household. Outgoing messages always wait for a person, by design.</p>
   </section>
 
   <section id="job-search">
@@ -330,7 +318,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
       <li>On a test run of one metro area's employers, it kept 48 roles and dropped 326, each with its reason.</li>
     </ul>
     <ul class="chips"><li>Python</li><li>Careers-site job feeds</li><li>Read-only mail agent</li><li>Browser agent</li><li>SEC and WARN filings</li><li>Rule-based scam checks</li></ul>
-    <p class="limits"><strong>Limits:</strong> sites that block scripts go through a slower browser agent, and mail is checked twice each weekday, not in real time. Open-role trends need 90 days of history, and the scam-check weights are a starting design until about three weeks of reviewed roles tune them.</p>
   </section>
 
   <section id="puppy-search">
@@ -350,7 +337,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
     </ul>
     <h3>Numbers</h3>
     <ul><li>39 trainer and veterinary-behaviorist sources in the temperament guide.</li></ul>
-    <p class="limits"><strong>Limits:</strong> it only reads listings. It never contacts a shelter or breeder.</p>
   </section>
 
   <section id="daily-log">
@@ -368,7 +354,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
       <li>Writes one note per day from a fixed template, so days compare cleanly over time.</li>
     </ul>
     <ul class="chips"><li>Agents</li><li>Vision</li><li>Daily notes</li></ul>
-    <p class="limits"><strong>Limits:</strong> built for one household. Calories are estimates, and the screenshot uses made-up data.</p>
   </section>
   </div>
 
