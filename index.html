@@ -309,27 +309,28 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px;
   <section id="job-search">
     <h2>AI job-search pipeline</h2>
     <p class="meta">2026 · scheduled agent</p>
-    <p class="lede">Matching roles come straight from employers' own careers sites, and recruiter replies keep each role's status current.</p>
+    <p class="lede">Matching roles come straight from employers' own careers sites, each with a company card and scam and ghost-job checks. Recruiter replies keep each role's status current.</p>
     <div class="shots">
       <figure><img src="images/job-pipeline-1.png" alt="Job Pipeline page: title and contents list" width="430" loading="lazy"><figcaption>The pipeline page, grouped by status. Private details are blurred.</figcaption></figure>
       <figure><img src="images/job-pipeline-2.png" alt="Job Pipeline page: one role card with private fields blurred" width="430" loading="lazy"><figcaption>A role card. Titles, companies, posted dates, and pay are blurred.</figcaption></figure>
+      <figure><img src="images/job-pipeline-3.png" alt="Sample company card for a made-up company, Example Robotics Co., with money, growth, layoff, stock, and news lines, followed by scam and ghost-job labels for two sample roles. All values are invented." width="430" loading="lazy"><figcaption>A company card and scam and ghost-job checks. Made-up sample values, not real data.</figcaption></figure>
     </div>
-    <p class="arch">Careers-site job feeds → title and rule filters → status-grouped web page. Weekday mail checks → role status. Blocked sites → browser agent.</p>
+    <p class="arch">Careers-site job feeds → title and rule filters → scam and ghost checks → status-grouped web page. SEC, WARN, stock, and news data → company cards. Weekday mail checks → role status. Blocked sites → browser agent.</p>
     <h3>Key decisions</h3>
     <ul>
-      <li>Reads each employer's careers site broadly, then filters by fixed titles and rules. Covers Greenhouse, Lever, Ashby, Workday, Oracle, Phenom, Avature, and SmartRecruiters job feeds.</li>
-      <li>Splits searches that pass Workday's 2,000-result cap, so large employers are read in full.</li>
+      <li>Reads each employer's careers site broadly, then filters by fixed titles and rules. Covers Greenhouse, Lever, Ashby, Workday, Oracle, Phenom, Avature, and SmartRecruiters job feeds, and splits searches that pass Workday's 2,000-result cap.</li>
       <li>Sends only sites that block scripts to a browser agent running typesafe.ai's Jev, with spaced, backed-off requests.</li>
       <li>Checks mail at 6:30 AM and 4 PM CT each weekday through a read-only mail agent. It reads full threads in Inbox, Sent, Trash, and Spam, so recruiter replies update each role's status.</li>
-      <li>Shows every dropped role with its reason instead of hiding it. Shows posted pay, and adds a yearly figure for hourly pay.</li>
+      <li>Adds a company card for each employer with a kept role: financial health from SEC filings, layoffs in the last 24 months from SEC and state WARN notices, open-role trend, 12-month stock change against the S&amp;P 500, and up to 3 recent headlines. Free sources only, and every figure carries its date and source.</li>
+      <li>Labels every role for scam risk and ghost-job risk with fixed rules, not a model's opinion. Eight hard flags, such as a fee up front or a request to run code, mark a likely scam. No label removes a role, and every dropped role shows its reason.</li>
     </ul>
     <h3>Numbers</h3>
     <ul>
-      <li>81 tests pass.</li>
+      <li>241 tests pass.</li>
       <li>On a test run of one metro area's employers, it kept 48 roles and dropped 326, each with its reason.</li>
     </ul>
-    <ul class="chips"><li>Python</li><li>Careers-site job feeds</li><li>Read-only mail agent</li><li>Browser agent</li></ul>
-    <p class="limits"><strong>Limits:</strong> sites that block scripts go through a slower browser agent, and mail is checked twice each weekday, not in real time.</p>
+    <ul class="chips"><li>Python</li><li>Careers-site job feeds</li><li>Read-only mail agent</li><li>Browser agent</li><li>SEC and WARN filings</li><li>Rule-based scam checks</li></ul>
+    <p class="limits"><strong>Limits:</strong> sites that block scripts go through a slower browser agent, and mail is checked twice each weekday, not in real time. Open-role trends need 90 days of history, and the scam-check weights are a starting design until about three weeks of reviewed roles tune them.</p>
   </section>
 
   <section id="puppy-search">
