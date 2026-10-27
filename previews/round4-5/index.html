@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sam Beckwith III · AI Engineer</title>
+<meta name="description" content="Sam Beckwith III, Senior Site Reliability Engineer and AI Engineer: full-time platform, reliability, and AI work, plus side and personal AI agent projects that keep working when models fail.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c75b2a'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ESB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Instrument+Serif&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* round4-5: fd-2 fixed side column and project rows, in rust and orange, with a light terminal accent. */
+:root{
+  --bg:#14100d; --bg-2:#1c1612; --bg-3:#221a15; --text:#ece4dc; --muted:#b3a597; --dim:#8f8174; --line:#2e241d; --line-2:#3d3027;
+  --rust:#c75b2a; --orange:#f0883e; --orange-soft:rgba(240,136,62,.12); --rust-soft:rgba(199,91,42,.16); --green:#3fbf6a;
+  --serif:"Instrument Serif", Georgia, serif; --sans:"Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--bg);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--muted);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-wrap:break-word}
+.spot{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(560px circle at var(--x,50%) var(--y,-20%),rgba(240,136,62,.07),transparent 70%)}
+.layout{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 20px}
+a{color:var(--text);text-underline-offset:3px}
+a:hover{color:var(--orange)}
+a:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:3px}
+.br{color:var(--rust);font-weight:400}
+.no{font-family:var(--mono);font-size:.72rem;color:var(--dim);font-weight:400;letter-spacing:.04em}
+
+/* Side column */
+.side{padding:28px 0 8px}
+.pill{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);background:var(--rust-soft);border:1px solid rgba(199,91,42,.45);border-radius:4px;padding:3px 8px;margin:0 0 14px;line-height:1.5}
+.side h1{font-family:var(--serif);font-weight:400;font-size:2.8rem;line-height:1;letter-spacing:-.01em;color:var(--text);margin:0 0 8px}
+.role{font-family:var(--mono);font-size:.74rem;color:var(--orange);margin:0 0 14px;line-height:1.5}
+.hero{font-size:1.1rem;line-height:1.4;color:var(--text);margin:0 0 10px;max-width:32ch}
+.hero::before{content:"> ";font-family:var(--mono);color:var(--rust)}
+.sub{font-size:.9rem;color:var(--dim);margin:0;max-width:46ch;line-height:1.55}
+.links{margin:16px 0 0;display:flex;gap:10px;flex-wrap:wrap}
+.links a{font-family:var(--mono);font-weight:600;font-size:.84rem;text-decoration:none;color:var(--bg);background:var(--orange);border:1px solid var(--orange);border-radius:6px;padding:7px 14px;display:inline-flex;gap:8px;align-items:center}
+.links a + a{background:transparent;color:var(--orange);border-color:rgba(240,136,62,.5)}
+.links a:hover{background:var(--rust);border-color:var(--rust);color:var(--text)}
+.links .ic{font-weight:400}
+.proof{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:8px}
+.proof li{margin:0;display:grid;grid-template-columns:1fr auto;column-gap:10px;align-items:baseline;background:var(--bg-2);border:1px solid var(--line);border-left:2px solid var(--rust);border-radius:6px;padding:9px 12px;font-size:.84rem;color:var(--dim);line-height:1.35}
+.proof strong{grid-column:1;color:var(--text);font-family:var(--mono);font-size:.98rem;font-weight:600}
+.proof .d{grid-column:1}
+.proof .tag{grid-column:2;grid-row:1;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:var(--orange);background:var(--orange-soft);border-radius:3px;padding:1px 6px;white-space:nowrap}
+nav{margin:20px 0 0;display:flex;flex-wrap:wrap;gap:4px 14px;counter-reset:n}
+nav a{font-family:var(--mono);font-size:.76rem;color:var(--dim);text-decoration:none;display:flex;align-items:center;gap:8px;padding:2px 0;counter-increment:n}
+nav a::before{content:"0" counter(n);color:var(--rust)}
+nav a::after{content:"";display:none;height:1px;width:22px;background:currentColor;transition:width .2s ease;order:-1}
+nav a:hover,nav a.on{color:var(--text)}
+
+/* Content column */
+.content{padding:8px 0 72px}
+.area{margin-top:52px}
+.content > .area:first-child{margin-top:26px}
+.area-title,#models > h2,#stack > h2{font-family:var(--mono);font-size:.92rem;font-weight:600;color:var(--text);margin:0 0 6px;position:sticky;top:0;z-index:2;padding:12px 0 10px;background:rgba(20,16,13,.9);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.area-intro{margin:8px 0 8px;font-size:.9rem;color:var(--dim)}
+.area > section{position:relative;margin:0 -12px;padding:20px 12px;border-radius:8px;border:1px solid transparent;transition:background .2s ease,border-color .2s ease,opacity .2s ease}
+.area > section h2{font-size:1.1rem;line-height:1.35;color:var(--text);font-weight:600;margin:0 0 4px;transition:color .2s ease}
+.meta{font-family:var(--mono);font-size:.72rem;color:var(--dim);margin:0 0 10px}
+.meta a{color:var(--muted)}
+.lede{color:var(--text);margin:0 0 10px;font-size:.97rem}
+.arch{font-family:var(--mono);font-size:.76rem;line-height:1.65;color:var(--muted);margin:14px 0 0;padding:10px 12px;background:var(--bg-2);border:1px solid var(--line);border-left:2px solid var(--rust);border-radius:6px}
+.arch::before{content:"$ ";color:var(--rust)}
+h3{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin:16px 0 6px}
+ul{margin:0;padding-left:1.1em}
+li{margin:0 0 6px;font-size:.92rem}
+li::marker{color:var(--rust)}
+li strong{color:var(--text)}
+.chips{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+.chips li{margin:0;font-family:var(--mono);font-size:.7rem;color:var(--orange);background:var(--orange-soft);border-radius:4px;padding:2px 8px;line-height:1.6}
+
+/* Numbers lead each card */
+.nums{list-style:none;padding:0;margin:4px 0 12px;display:grid;gap:6px}
+.nums li{margin:0;font-size:.86rem;color:var(--muted);line-height:1.45;padding:6px 10px;background:var(--bg-2);border-radius:6px;border:1px solid var(--line)}
+.nums b{font-family:var(--mono);font-size:1.02rem;font-weight:600;color:var(--orange)}
+
+/* Full-time as a dated timeline */
+.timeline > section{padding-left:34px}
+.timeline > section::before{content:"";position:absolute;left:17px;top:0;bottom:0;width:1px;background:var(--line-2)}
+.timeline > section::after{content:"";position:absolute;left:12px;top:26px;width:11px;height:11px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 3px var(--bg)}
+.timeline > section .meta{display:inline-block;color:var(--orange);background:var(--rust-soft);border-radius:4px;padding:1px 7px}
+
+/* Pipeline stepper */
+.pipe{margin:14px 0 4px;background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.pipe-label{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--dim);margin:0 0 8px}
+.steps{list-style:none;padding:0;margin:0}
+.steps li{position:relative;display:flex;align-items:center;gap:10px;margin:0;padding:5px 0;font-family:var(--mono);font-size:.8rem;color:var(--text)}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:39px;top:24px;height:14px;width:1px;background:var(--line-2)}
+.steps .n{font-size:.7rem;color:var(--rust);width:20px}
+.steps .ok{width:16px;height:16px;flex:none}
+.steps .ok circle{fill:var(--green)}
+.steps .ok path{fill:none;stroke:#0e1a12;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.steps li:last-child .s{color:var(--orange);font-weight:600}
+
+/* Images */
+.shots{display:grid;grid-template-columns:1fr;gap:14px;margin:14px 0 4px}
+figure{margin:0}
+figure img{display:block;width:100%;max-width:360px;height:auto;margin:0 auto;border:1px solid var(--line-2);border-radius:6px;transition:border-color .2s ease}
+figcaption{font-size:.76rem;color:var(--dim);text-align:center;margin-top:6px;line-height:1.45}
+figcaption a{color:var(--dim)}
+.content > section{margin-top:56px}
+#models > .meta{margin-top:10px}
+.model{margin:0 0 10px;padding-left:12px;border-left:1px solid var(--line-2)}
+.model p{margin:0;font-size:.92rem}
+.model strong{color:var(--text);font-weight:600}
+
+/* Grouped skill chips */
+.skills .group{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin:12px 0 0}
+.skills .group h3{margin:0 0 4px}
+.skills .group h3::before{content:"# ";color:var(--rust)}
+.skills .chips{margin-top:6px}
+footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--line);font-size:.8rem;color:var(--dim)}
+
+@media (hover:hover){
+  .area > section:hover{background:rgba(46,36,29,.5);border-color:rgba(240,136,62,.18)}
+  .area > section:hover h2{color:var(--orange)}
+  .area > section:hover figure img{border-color:rgba(240,136,62,.4)}
+  .area:has(> section:hover) > section:not(:hover){opacity:.6}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+
+@media (min-width:1024px){
+  .layout{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;padding:0 48px}
+  .side{position:sticky;top:0;height:100vh;padding:56px 0 32px;display:flex;flex-direction:column;align-items:flex-start;overflow-y:auto}
+  .side h1{font-size:3.5rem}
+  nav{flex-direction:column;gap:2px;margin-top:22px}
+  nav a::after{display:block}
+  nav a:hover::after,nav a.on::after{width:48px}
+  .content{padding-top:40px}
+  .area:first-child{margin-top:0}
+  .area > section{display:grid;grid-template-columns:150px minmax(0,1fr);column-gap:22px;margin:0 -18px;padding:22px 18px}
+  .area > section > *{grid-column:2}
+  .area > section > .meta{grid-column:1;grid-row:1 / span 3;align-self:start;margin-top:3px}
+  .timeline > section{padding-left:40px}
+  .timeline > section::before{left:22px}
+  .timeline > section::after{left:17px;top:28px}
+  .shots{grid-template-columns:1fr 1fr;align-items:start}
+  .skills{display:grid;grid-template-columns:1fr 1fr;column-gap:12px}
+  .skills > h2{grid-column:1 / -1}
+}
+</style>
+</head>
+<body>
+<div class="spot" aria-hidden="true"></div>
+<div class="layout">
+  <header class="side">
+    <p class="pill">12+ years in SRE and platform engineering</p>
+    <h1>Sam Beckwith III</h1>
+    <p class="role">Senior Site Reliability Engineer &amp; AI Engineer</p>
+    <p class="hero">I build AI agents that keep working when models fail.</p>
+    <p class="sub">I designed and built every side and personal project on this page. Each one is tested before it ships, asks a person before anything leaves it, and recovers on its own when a model, a website, or a service fails.</p>
+    <p class="links"><a href="https://www.linkedin.com/in/samb1/">LinkedIn <span class="ic" aria-hidden="true">↗</span></a><a href="https://github.com/redeemed2011">GitHub <span class="ic" aria-hidden="true">&lt;&gt;</span></a></p>
+    <ul class="proof">
+      <li><span class="tag">CI/CD</span><strong>6x faster CI/CD</strong><span class="d">pipelines in a large monorepo</span></li>
+      <li><span class="tag">SRE</span><strong>12+ years</strong><span class="d">in SRE and platform engineering</span></li>
+      <li><span class="tag">AI TOOLING</span><strong>3x productivity</strong><span class="d">with AI tooling</span></li>
+    </ul>
+    <nav aria-label="Sections">
+      <a href="#full-time">Full-time work</a>
+      <a href="#side-projects">Side projects</a>
+      <a href="#personal-projects">Personal projects</a>
+      <a href="#models">Models</a>
+      <a href="#stack">Stack</a>
+    </nav>
+  </header>
+<main class="content">
+
+  <div class="area timeline" id="full-time">
+    <h2 class="area-title"><span class="no">01</span> <span class="br">[</span>Full-time work<span class="br">]</span></h2>
+    <p class="area-intro">Platform, reliability, and AI work for employers, newest first. Employer names, code, and screenshots stay private.</p>
+    <section id="work-factory">
+      <h2>AI work factory: from ticket to pull request</h2>
+      <p class="meta">2025–present · full-time</p>
+      <p class="lede">Designed and built a workflow that turns a ticket into a tested, self-reviewed pull request, improving reliability, velocity, and output quality.</p>
+      <div class="pipe"><p class="pipe-label"><span class="br">[</span>pipeline<span class="br">]</span></p><ol class="steps" aria-label="Pipeline: Linear ticket, spec, implementation, tests, critic review, gap fixes, pull request"><li><span class="n">01</span><svg class="ok" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8"/><path d="M4.4 8.3l2.4 2.4 4.8-5"/></svg><span class="s">Linear ticket</span></li><li><span class="n">02</span><svg class="ok" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8"/><path d="M4.4 8.3l2.4 2.4 4.8-5"/></svg><span class="s">spec</span></li><li><span class="n">03</span><svg class="ok" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8"/><path d="M4.4 8.3l2.4 2.4 4.8-5"/></svg><span class="s">implementation</span></li><li><span class="n">04</span><svg class="ok" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8"/><path d="M4.4 8.3l2.4 2.4 4.8-5"/></svg><span class="s">tests</span></li><li><span class="n">05</span><svg class="ok" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8"/><path d="M4.4 8.3l2.4 2.4 4.8-5"/></svg><span class="s">critic review</span></li><li><span class="n">06</span><svg class="ok" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8"/><path d="M4.4 8.3l2.4 2.4 4.8-5"/></svg><span class="s">gap fixes</span></li><li><span class="n">07</span><svg class="ok" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8"/><path d="M4.4 8.3l2.4 2.4 4.8-5"/></svg><span class="s">pull request</span></li></ol></div>
+      <h3>Key decisions</h3>
+      <ul>
+        <li>LLM agents and deterministic code work together, each doing the steps it handles best.</li>
+        <li>Every job starts as a spec generated from the ticket, and the agents implement that whole spec.</li>
+        <li>The workflow tests its own implementation and reviews it with critic agents.</li>
+        <li>It fills gaps and fixes the issues it finds, then opens the pull request.</li>
+        <li>Covers software delivery, on-call management, and tooling, not only code.</li>
+      </ul>
+      <ul class="chips"><li>LLM agents</li><li>Critic agents</li><li>Agent orchestration</li><li>Hybrid LLM + deterministic workflows</li><li>Linear</li><li>Pull requests</li></ul>
+    </section>
+
+
+    <section id="ai-infra">
+      <h2>AI agents for infrastructure work</h2>
+      <p class="meta">2024–present · full-time</p>
+      <ul class="nums" aria-label="Numbers"><li><b>3x</b> productivity with AI tooling.</li><li><b>Doubled</b> my meaningful code and review contributions in the first quarter, <b>tripled</b> them over the last year, and significantly reduced MTTR.</li></ul>
+      <p class="lede">Tripled my productivity with AI tooling, without lowering quality.</p>
+      <h3>Key decisions</h3>
+      <ul>
+        <li>Created custom prompts, agent orchestration flows, specialist and critic agents, and self-improving workflows to resolve hard infrastructure issues and ship major projects faster.</li>
+        <li>Developed a secure container sandbox that gives AI agents read-only access to cloud infrastructure and Kubernetes clusters, and lets them open pull requests safely. Agents work in parallel with no risk of accidental changes.</li>
+        <li>Mentored the team on AI practices with Copilot and Claude, and shared my tooling and lessons alongside Terraform and policy engines.</li>
+      </ul>
+      <ul class="chips"><li>Claude</li><li>Copilot</li><li>Gemini</li><li>Agent orchestration</li><li>Container sandbox</li></ul>
+    </section>
+
+    <section id="k8s-reliability">
+      <h2>Kubernetes platform reliability at 24,000+ pods</h2>
+      <p class="meta">2024–present · full-time</p>
+      <ul class="nums" aria-label="Numbers"><li><b>24,000+</b> pods in production clusters.</li><li><b>50%+</b> faster node provisioning.</li></ul>
+      <p class="lede">Production clusters running 24,000+ pods get new nodes 50%+ faster, cost less, and take days less effort to upgrade.</p>
+      <h3>Key decisions</h3>
+      <ul>
+        <li>Reconfigured and upgraded Karpenter, cutting node provisioning time 50%+.</li>
+        <li>Wrote Kyverno policies that enforce resource limits, requests, and best practices, reducing EKS cluster costs and node overcommitment.</li>
+        <li>Built an auto-rollback service for problematic AMI releases on EKS. It prevents major outages on its own and notifies SREs for follow-up.</li>
+        <li>Simplified administration and expanded policy as code, saving days of engineering effort per Kubernetes upgrade.</li>
+        <li>Created Grafana dashboards, Prometheus and Thanos metrics, recording rules, and alerts.</li>
+      </ul>
+      <ul class="chips"><li>AWS EKS</li><li>Karpenter</li><li>Kyverno</li><li>Grafana</li><li>Prometheus / Thanos</li></ul>
+    </section>
+
+    <section id="iac-platform">
+      <h2>Self-service infrastructure-as-code platform</h2>
+      <p class="meta">2024–present · full-time</p>
+      <p class="lede">Engineers deploy infrastructure on their own, with no risk to production data.</p>
+      <h3>Key decisions</h3>
+      <ul>
+        <li>Delivered and fully manage a self-service IaC platform built on gated GitHub Workflows.</li>
+        <li>Kyverno and OPA policies check every change before it applies.</li>
+        <li>Plans, applies, and retries run automatically, with manual triggers when an engineer needs one.</li>
+      </ul>
+      <ul class="chips"><li>Terraform</li><li>GitHub Actions</li><li>Kyverno</li><li>OPA</li></ul>
+    </section>
+
+    <section id="ci-platform">
+      <h2>6x faster CI/CD and an internal developer platform</h2>
+      <p class="meta">2021–2024 · full-time</p>
+      <ul class="nums" aria-label="Numbers"><li><b>6x</b> faster CI/CD pipelines.</li><li><b>80%</b> less upgrade toil.</li><li>Internal developer platform adopted by <b>all</b> engineers.</li></ul>
+      <p class="lede">CI/CD pipelines in a large monorepo ran 6x faster, and every engineer adopted the internal developer platform.</p>
+      <h3>Key decisions</h3>
+      <ul>
+        <li>Designed dynamic GitLab pipelines that trigger only the affected jobs.</li>
+        <li>Built automation that pauses and resumes GitLab Runners during Kubernetes upgrades, ending deployment conflicts.</li>
+        <li>Stabilized Terraform, stood up Vault on ECS, migrated secrets, and containerized VMs.</li>
+        <li>Wrote RFCs for architecture changes and mentored SREs.</li>
+      </ul>
+      <ul class="chips"><li>GitLab CI</li><li>Terraform</li><li>Vault</li><li>AWS ECS</li><li>Kubernetes</li></ul>
+    </section>
+
+    <section id="k8s-migration">
+      <h2>Internal developer platform and zero-downtime Kubernetes migration</h2>
+      <p class="meta">2019–2021 · full-time</p>
+      <p class="lede">Kubernetes services moved across AWS accounts with zero downtime.</p>
+      <h3>Key decisions</h3>
+      <ul>
+        <li>Designed and built an internal developer platform.</li>
+        <li>Migrated multi-account Kubernetes services, coordinating AWS networking and DNS for a zero-downtime cutover.</li>
+        <li>Developed IaC tooling that automates brittle repairs, such as certificate uploads, DNS mirroring, and Artifactory migrations, preventing outages from expired certificates.</li>
+      </ul>
+      <ul class="chips"><li>Kubernetes</li><li>AWS</li><li>DNS</li><li>Artifactory</li></ul>
+    </section>
+  </div>
+
+  <div class="area" id="side-projects">
+    <h2 class="area-title"><span class="no">02</span> <span class="br">[</span>Side projects<span class="br">]</span></h2>
+    <p class="area-intro">Built on my own time. I designed and built each one.</p>
+
+  <section id="garage-assistant">
+    <h2>AI garage operations assistant and build tracker</h2>
+    <p class="meta">2026 · garage assistant in Slack, web dashboard, Cloudflare</p>
+      <ul class="nums" aria-label="Numbers"><li>About <b>50</b> BDD feature files, each behavior with a passing and a failing case.</li><li>Designed to run on Cloudflare's <b>$5</b>-a-month Workers plan.</li></ul>
+    <p class="lede">Mechanics at a vehicle build and repair garage keep posting from their phones as they always have, and every build's record stays complete.</p>
+    <div class="shots">
+      <figure><img src="images/shop-1.png" alt="Phone view of a garage build board grouped by stage, with one build opened to show its open tasks and latest update." width="430" loading="lazy"><figcaption>Build board: every open build by stage, with who is on it and what's next. Sample data.</figcaption></figure>
+      <figure><img src="images/shop-2.png" alt="Phone view of one build's record showing its status, waiting reason, labor and parts totals, tasks, and parts with order status." width="430" loading="lazy"><figcaption>A build's record: status, tasks, and parts tracked from order to install. Sample data.</figcaption></figure>
+    </div>
+    <p class="arch">Slack → signed webhook → Cloudflare Worker → queue → AI readers on Workers AI → D1 database and R2 file storage → phone-first web board.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li>Replaces a spreadsheet, a whiteboard, a retyped daily status doc, and a group text for vehicle builds and repairs. The build crew posts texts, photos, receipts, PDFs, and voice notes in Slack, and the garage assistant files each one to the right build. When the build is unclear or a post looks like a duplicate, it asks instead of guessing.</li>
+      <li>Several vision models read each receipt in parallel, each field is decided by majority vote, and the arithmetic is checked. Mismatched totals, duplicate invoices, and unusual prices go to a person. Duplicates are caught in any format: a photo, a PDF, and a typed note about the same receipt are compared on what they say.</li>
+      <li>Every write is idempotent, logged, and undoable, and nothing is hard-deleted. Corrections work in plain words, such as "move the water pump to the other truck", and invoiced records never move. Labor hours are tracked without ever editing invoiced time, and the garage leader gets a daily labor report.</li>
+      <li>A watchdog resends any post that stalls, then alerts a person. Every deploy runs the full test suite, checks migrations, smoke-tests health, and rolls back on failure. Nightly backups get a monthly restore drill.</li>
+      <li>Leaders get a phone-first board by build stage, build pages with tasks, parts, receipts, and photos, and a print page. Sign-in is Slack plus a passkey, with role-based permissions.</li>
+    </ul>
+    <ul class="chips"><li>Cloudflare Workers</li><li>D1</li><li>R2</li><li>Queues</li><li>Workers AI</li><li>Slack API</li><li>Cucumber BDD</li></ul>
+  </section>
+
+  <section id="pi-toolbag">
+    <h2>pi-toolbag: CTX long-horizon focus and LLM failover for coding agents</h2>
+    <p class="meta">2026 · open source · <a href="https://github.com/redeemed2011/pi-toolbag">github.com/redeemed2011/pi-toolbag</a></p>
+    <p class="lede">Coding agents that stay on task for the long haul and keep working when a model provider fails.</p>
+    <p class="arch">Extensions for the Pi coding agent: CTX rebuilds working context after each compaction, and a shared failover library replays failed requests on the next model.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li><strong>CTX</strong> keeps a coding agent focused across context compactions without stopping it from useful exploration. It rebuilds context from typed records within a fixed token budget, with no extra model call.</li>
+      <li>Project rules are shared across sessions only after an explicit bind that a person confirms, so an agent's passing notes never become rules on their own.</li>
+      <li>Same-session failover switches on quota, timeout, safety errors, and stalled streams, and never on auth errors or refusals. No user action is needed.</li>
+      <li>Usage-cap gates switch away before a model hits its limit and switch back once usage recovers.</li>
+    </ul>
+    <ul class="chips"><li>TypeScript</li><li>Pi coding agent</li><li>Vitest</li><li>BDD</li></ul>
+  </section>
+
+  <section id="harness">
+    <h2>Coding-agent harness</h2>
+    <p class="meta">2026 · in daily use</p>
+    <p class="lede">Every coding-agent session starts with the same scoping, checks, and project rules.</p>
+    <p class="arch">Skills, lifecycle hooks, and AGENTS.md templates for xAI's Grok Build coding agent, set up by one installer.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li>Scoping and verification skills, so each task is scoped before work starts and checked before it's called done.</li>
+      <li>Lifecycle hooks protect context before compaction and nudge the agent to verify its work.</li>
+      <li>AGENTS.md templates give each project the same written rules.</li>
+      <li>An idempotent installer, so setup is safe to run again.</li>
+    </ul>
+    <ul class="chips"><li>Grok Build</li><li>Agent skills</li><li>Lifecycle hooks</li><li>AGENTS.md</li></ul>
+  </section>
+  </div>
+
+  <div class="area" id="personal-projects">
+    <h2 class="area-title"><span class="no">03</span> <span class="br">[</span>Personal projects<span class="br">]</span></h2>
+    <p class="area-intro">Agents I designed and built for my own household.</p>
+
+  <section id="personal-ops">
+    <h2>Multi-agent personal operations system</h2>
+    <p class="meta">2026 · 20+ agents</p>
+      <ul class="nums" aria-label="Numbers"><li>More than <b>20</b> specialized agents, plus a daily <b>7 AM</b> briefing on email, calendar, tasks, orders, weather, and job matches.</li></ul>
+    <p class="lede">A team of AI agents runs a household's daily operations, and a person approves anything that goes out.</p>
+    <p class="arch">Router agent → specialist agents (chief of staff, research, tasks, email, notes, browser, job search) → shared report files → 7 AM briefing.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li>Routing rules send each request to one specialist agent, and scheduled routines run without a prompt.</li>
+      <li>Human approval is required before any email, message, or post is sent.</li>
+      <li>A queued, lock-protected browser-automation agent (Python, Chrome DevTools Protocol, automated tests) handles sites with no API.</li>
+      <li>A public job-board poller (Greenhouse, Lever, Ashby, Workday) and weather and nutrition pipelines retry and check themselves.</li>
+    </ul>
+    <ul class="chips"><li>Python</li><li>Chrome DevTools Protocol</li><li>browser-use</li><li>Scheduled routines</li></ul>
+  </section>
+
+  <section id="job-search">
+    <h2>AI job-search pipeline</h2>
+    <p class="meta">2026 · scheduled agent</p>
+      <ul class="nums" aria-label="Numbers"><li><b>241</b> tests pass.</li><li>On a test run of one metro area's employers, it kept <b>48</b> roles and dropped <b>326</b>, each with its reason.</li></ul>
+    <p class="lede">Matching roles come straight from employers' own careers sites, each with a company card and scam and ghost-job checks. Mail replies keep each role's status current.</p>
+    <div class="shots">
+      <figure><img src="images/job-pipeline-1.png" alt="Job Pipeline page: title and contents list with the count in each status" width="430" loading="lazy"><figcaption>The pipeline page, grouped by status.</figcaption></figure>
+      <figure><img src="images/job-pipeline-2.png" alt="Job Pipeline page: one role card for a made-up Senior Site Reliability Engineer role at Example Robotics Co." width="430" loading="lazy"><figcaption>A role card. The company and role are made-up examples.</figcaption></figure>
+      <figure><img src="images/job-pipeline-3.png" alt="Sample company card for a made-up company, Example Robotics Co., with money, growth, layoff, stock, and news lines, followed by scam and ghost-job labels for two sample roles. All values are invented." width="430" loading="lazy"><figcaption>A company card and scam and ghost-job checks. Made-up sample values, not real data.</figcaption></figure>
+    </div>
+    <p class="arch">Careers-site job feeds → title and rule filters → scam and ghost checks → status-grouped web page. SEC, WARN, stock, and news data → company cards. Weekday mail checks → role status. Blocked sites → browser agent.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li>Reads each employer's careers site broadly, then filters by fixed titles and rules. Covers Greenhouse, Lever, Ashby, Workday, Oracle, Phenom, Avature, and SmartRecruiters job feeds, and splits searches that pass Workday's 2,000-result cap.</li>
+      <li>Sends only sites that block scripts to a browser agent running typesafe.ai's Jev, with spaced, backed-off requests.</li>
+      <li>Checks mail at 6:30 AM and 4 PM CT each weekday through a read-only mail agent. It reads full threads in Inbox, Sent, Trash, and Spam, so replies update each role's status.</li>
+      <li>Adds a company card for each employer with a kept role: financial health from SEC filings, layoffs in the last 24 months from SEC and state WARN notices, open-role trend, 12-month stock change against the S&amp;P 500, and up to 3 recent headlines. Free sources only, and every figure carries its date and source.</li>
+      <li>Labels every role for scam risk and ghost-job risk with fixed rules, not a model's opinion. Eight hard flags, such as a fee up front or a request to run code, mark a likely scam. No label removes a role, and every dropped role shows its reason.</li>
+    </ul>
+    <ul class="chips"><li>Python</li><li>Careers-site job feeds</li><li>Read-only mail agent</li><li>Browser agent</li><li>SEC and WARN filings</li><li>Rule-based scam checks</li></ul>
+  </section>
+
+  <section id="puppy-search">
+    <h2>AI-assisted puppy search</h2>
+    <p class="meta">2026 · research agent</p>
+      <ul class="nums" aria-label="Numbers"><li><b>39</b> trainer and veterinary-behaviorist sources in the temperament guide.</li></ul>
+    <p class="lede">A daily search across shelters, rescues, and breeders, with an alert when the right dog appears.</p>
+    <div class="shots">
+      <figure><img src="images/dog-search-1.png" alt="Dog search page: a lead card with a black Lab puppy photo and made-up listing details" width="430" loading="lazy"><figcaption>A lead card. The shelter, price, and contact are made-up examples. Listing photo: <a href="https://commons.wikimedia.org/wiki/File:Black_Labrador_Pup.jpg">John Schanlaub</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>, via Wikimedia Commons.</figcaption></figure>
+      <figure><img src="images/dog-search-2.png" alt="Dog search page: excerpt from the temperament test guide" width="430" loading="lazy"><figcaption>An excerpt from the sourced temperament-test guide.</figcaption></figure>
+    </div>
+    <p class="arch">Scheduled research agent → shelter, rescue, and breeder sites → priority-ranked photo-card page and alerts. Blocked sites → browser agent.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li>Runs every evening and on demand against one written dog profile.</li>
+      <li>Ranks rescue and shelter dogs ahead of breeders and private listings, and alerts when a match becomes available.</li>
+      <li>Pairs the search with a sourced guide to temperament checks at a visit.</li>
+    </ul>
+  </section>
+
+  <section id="daily-log">
+    <h2>Daily food and activity logging agents</h2>
+    <p class="meta">2026 · personal agents</p>
+    <p class="lede">A few chat messages and a meal photo become a complete daily note, with no forms to fill in.</p>
+    <div class="shots">
+      <figure><img src="images/daily-log-1.png" alt="Example daily note written by the logging agents: four meals with estimated calories, a 30-minute walk, and a 14-day chart of daily steps trending up. All values are made-up example data." width="430" loading="lazy"><figcaption>A daily note as the logging agents write it from a few chat messages and a meal photo. Example data only, not real metrics.</figcaption></figure>
+    </div>
+    <p class="arch">Chat messages and meal photos → logging agents → one dated daily note → trends across days.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li>Reads food and activity details from plain chat messages and meal photos, and files them under the right day.</li>
+      <li>Estimates calories for each meal and labels them as estimates.</li>
+      <li>Writes one note per day from a fixed template, so days compare cleanly over time.</li>
+    </ul>
+    <ul class="chips"><li>Agents</li><li>Vision</li><li>Daily notes</li></ul>
+  </section>
+  </div>
+
+  <section id="models">
+    <h2><span class="no">04</span> <span class="br">[</span>Models I use and how<span class="br">]</span></h2>
+    <p class="meta">Each model has a specific job, and some jobs have a fallback.</p>
+    <div class="model"><p><strong>Coding:</strong> xAI's Grok Build coding agent, run through my own sandboxed launcher, and the Pi coding agent with pi-toolbag. Pi's failover chain, in order: GLM-5.3 on Baseten, Grok through SuperGrok, Grok through the xAI API, Anthropic's Fable, Claude Opus, then Claude Sonnet.</p></div>
+    <div class="model"><p><strong>Planning and review (personal work):</strong> Grok.</p></div>
+    <div class="model"><p><strong>Browser agent and data-ingest decisions (personal work):</strong> typesafe.ai's Jev.</p></div>
+    <div class="model"><p><strong>Garage assistant receipt reading (Cloudflare Workers AI):</strong> Llama 4 Scout 17B, Mistral Small 3.1 24B, and Llama 3.2 11B Vision read each receipt in parallel, and each field is decided by majority vote.</p></div>
+    <div class="model"><p><strong>Telling photos from documents (garage assistant):</strong> Llama 3.2 11B Vision plus ResNet-50 decide whether an upload is a document to read in full or a photo to describe.</p></div>
+    <div class="model"><p><strong>Voice notes:</strong> Whisper large-v3-turbo transcribes, with Deepgram Nova-3 as the fallback.</p></div>
+    <div class="model"><p><strong>At work:</strong> Astra/Terra, plus Fable, Opus, and Sonnet. I'm evaluating OpenAI's Decisions model for alerts, Kubernetes events, and log lines.</p></div>
+  </section>
+
+  <section id="stack" class="skills">
+    <h2><span class="no">05</span> <span class="br">[</span>Stack<span class="br">]</span></h2>
+    <div class="group"><h3>Languages</h3><ul class="chips"><li>Python</li><li>TypeScript / Node.js</li><li>Go</li><li>Bash</li></ul></div>
+    <div class="group"><h3>AI and agents</h3><ul class="chips"><li>Grok</li><li>Claude</li><li>Copilot</li><li>GPT</li><li>Gemini</li><li>GLM</li><li>Llama</li><li>Workers AI</li><li>Agent orchestration</li><li>Guardrails</li></ul></div>
+    <div class="group"><h3>Cloud and platform</h3><ul class="chips"><li>Cloudflare Workers, D1, R2, Queues</li><li>AWS EKS and ECS</li><li>Kubernetes</li><li>Karpenter</li><li>Terraform</li><li>Vault</li><li>Kyverno / OPA</li></ul></div>
+    <div class="group"><h3>Testing and delivery</h3><ul class="chips"><li>BDD / Cucumber</li><li>Vitest</li><li>GitHub Actions</li><li>GitLab CI</li><li>Artifactory</li><li>Auto-rollback deploys</li></ul></div>
+    <div class="group"><h3>Observability</h3><ul class="chips"><li>Grafana</li><li>Prometheus / Thanos</li><li>SLOs</li></ul></div>
+  </section>
+
+  <footer>
+    <p>Open-source contributions: pi-hashline-edit-pro (input-validation fix) and a durable-pi fork (Grok model integration).</p>
+    <p>Screenshots use made-up example data in place of names, prices, and contact details.</p>
+    <p><a href="https://www.linkedin.com/in/samb1/">LinkedIn</a> · <a href="https://github.com/redeemed2011">GitHub</a> · Updated October 2026</p>
+  </footer>
+</main>
+</div>
+<script>
+(function(){
+  var spot=document.querySelector('.spot');
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+    addEventListener('pointermove',function(e){spot.style.setProperty('--x',e.clientX+'px');spot.style.setProperty('--y',e.clientY+'px');},{passive:true});
+  }
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id);});}});},{rootMargin:'-30% 0px -60% 0px'});
+  links.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)io.observe(t);});
+})();
+</script>
+</body>
+</html>
