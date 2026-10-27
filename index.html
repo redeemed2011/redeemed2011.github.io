@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sam Beckwith III · AI Engineer</title>
+<meta name="description" content="Sam Beckwith III designs and builds AI agent systems that keep working when models fail: a Slack shop assistant, a 20+ agent operations system, and open-source tools for coding agents.">
+<link rel="canonical" href="https://redeemed2011.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://redeemed2011.github.io/">
+<meta property="og:title" content="Sam Beckwith III · AI Engineer">
+<meta property="og:description" content="I build AI agents that keep working when models fail.">
+<meta property="og:image" content="https://redeemed2011.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sam Beckwith III, Senior Site Reliability Engineer and AI Engineer: I build AI agents that keep working when models fail.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231d4ed8'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ESB%3C/text%3E%3C/svg%3E">
+<style>
+:root { --text: #16181d; --muted: #4a515c; --soft: #6b7280; --line: #e4e7eb; --accent: #1d4ed8; --bg: #ffffff; --card: #f7f8fa; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 28px 20px 56px; }
+a { color: var(--accent); }
+header h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 4px; }
+.role { font-size: 1rem; color: var(--muted); margin: 0 0 14px; font-weight: 600; }
+.hero { font-size: 1.35rem; line-height: 1.35; font-weight: 700; margin: 0 0 10px; }
+.sub { color: var(--muted); margin: 0; }
+.links { margin: 14px 0 0; display: flex; gap: 10px; flex-wrap: wrap; }
+.links a { font-weight: 600; text-decoration: none; border: 1px solid var(--accent); border-radius: 8px; padding: 6px 14px; }
+.proof { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: 1fr; gap: 10px; }
+.proof li { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; color: var(--muted); font-size: 0.95rem; margin: 0; }
+.proof strong { display: block; color: var(--text); font-size: 1.15rem; }
+nav { margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+nav a { font-size: 0.9rem; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
+section { border-top: 1px solid var(--line); padding-top: 26px; margin-top: 30px; }
+h2 { font-size: 1.35rem; line-height: 1.3; margin: 0 0 4px; }
+h3 { font-size: 0.95rem; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--soft); }
+.meta { font-size: 0.9rem; color: var(--soft); margin: 0 0 10px; }
+.lede { font-weight: 600; margin: 0 0 6px; }
+.arch { font-size: 0.95rem; color: var(--muted); background: var(--card); border-left: 3px solid var(--accent); border-radius: 6px; padding: 8px 12px; margin: 0; }
+.limits { font-size: 0.95rem; color: var(--muted); margin: 14px 0 0; }
+ul { margin: 0; padding-left: 1.2em; }
+li { margin: 0 0 8px; color: var(--muted); }
+li strong { color: var(--text); }
+.chips { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li { margin: 0; font-size: 0.82rem; color: var(--text); background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
+.group { margin: 0 0 14px; }
+.group h3 { margin-top: 0; }
+.shots { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 16px 0 4px; }
+figure { margin: 0; }
+figure img { display: block; width: 100%; max-width: 380px; height: auto; margin: 0 auto; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+figcaption { font-size: 0.85rem; color: var(--soft); text-align: center; margin-top: 8px; }
+figcaption a { color: var(--soft); }
+.model { margin: 0 0 12px; }
+.model p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.model strong { color: var(--text); }
+footer { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 18px; font-size: 0.9rem; color: var(--soft); }
+@media (min-width: 720px) {
+  main { padding-top: 52px; }
+  header h1 { font-size: 2.4rem; }
+  .hero { font-size: 1.6rem; }
+  .proof { grid-template-columns: repeat(3, 1fr); }
+  .shots { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Sam Beckwith III</h1>
+    <p class="role">Senior Site Reliability Engineer &amp; AI Engineer</p>
+    <p class="hero">I build AI agents that keep working when models fail.</p>
+    <p class="sub">I designed and built everything on this page. Each system is tested before it ships, asks a person before anything leaves it, and recovers on its own when a model, a website, or a service fails.</p>
+    <p class="links"><a href="https://www.linkedin.com/in/samb1/">LinkedIn</a><a href="https://github.com/redeemed2011">GitHub</a></p>
+    <ul class="proof">
+      <li><strong>20+ AI agents</strong>in one system, in daily use</li>
+      <li><strong>Tens of thousands</strong>of context compactions with a coding agent still on task</li>
+      <li><strong>About 50 BDD features</strong>gate every deploy of the shop assistant</li>
+    </ul>
+    <nav aria-label="Sections">
+      <a href="#shop-assistant">Shop assistant</a>
+      <a href="#personal-ops">Agent team</a>
+      <a href="#pi-toolbag">CTX and failover</a>
+      <a href="#job-search">Job search</a>
+      <a href="#puppy-search">Puppy search</a>
+      <a href="#models">Models</a>
+      <a href="#stack">Stack</a>
+    </nav>
+  </header>
+
+  <section id="shop-assistant">
+    <h2>AI shop assistant and build tracker</h2>
+    <p class="meta">2026 · Slack bot, web dashboard, Cloudflare</p>
+    <p class="lede">A shop crew keeps posting from their phones as they always have, and every build's record stays complete.</p>
+    <p class="arch">Slack → signed webhook → Cloudflare Worker → queue → AI readers on Workers AI → D1 database and R2 file storage → phone-first web board.</p>
+    <h3>Why it exists</h3>
+    <ul>
+      <li>A custom vehicle build shop ran builds that last months or years on a spreadsheet, a whiteboard, a daily status doc retyped by hand, and a group text. Nothing could be searched or totaled, and receipts, parts, and labor were hard to tie to the right build.</li>
+      <li>One system replaces all four. The crew posts texts, photos, receipts, PDFs, and voice notes in Slack, and the assistant files each one to the right build. Leaders get a live board instead of a retyped document. The shop owns every account and the code.</li>
+    </ul>
+    <h3>What it does</h3>
+    <ul>
+      <li><strong>Files posts to the right build.</strong> A reaction on each post shows its state: received, filed, needs a fix, or answered. When the build is unclear or a post looks like a duplicate, it asks instead of guessing.</li>
+      <li><strong>Reads receipts it can trust.</strong> Several vision models read each receipt in parallel, each field is decided by majority vote, and the arithmetic is checked. Mismatched totals, duplicate invoices, parts already on another build, and unusual prices go to a person.</li>
+      <li><strong>Turns voice notes into text</strong> inside the shop's own cloud account, with a backup model.</li>
+      <li><strong>Catches duplicates in any format.</strong> A photo, a PDF, and a typed note about one receipt are compared on what they say.</li>
+      <li><strong>Takes corrections in plain words.</strong> "Move the water pump to the other truck" moves the records, and "undo" moves them back. Invoiced records never move.</li>
+      <li><strong>Tracks labor safely.</strong> It never edits invoiced hours, never deletes, and sends the shop leader a daily labor report. Invoicing stays in the shop's accounting software.</li>
+      <li><strong>Gives a phone-first web view:</strong> a board by build stage that mirrors the old status doc, build pages with tasks, parts, receipts, and photos, and a print page. Sign-in is Slack plus a passkey, with role-based permissions.</li>
+    </ul>
+    <h3>Key decisions</h3>
+    <ul>
+      <li>Every write is idempotent, logged, and undoable. Nothing is hard-deleted.</li>
+      <li>A watchdog resends any post that stalls, then alerts a person. A catch-up sweep after each deploy finds anything missed.</li>
+      <li>Every deploy runs the full test suite, checks migrations and schema, smoke-tests health, and rolls back automatically on failure.</li>
+      <li>Nightly backups, point-in-time restore, and a monthly restore drill.</li>
+    </ul>
+    <h3>Numbers</h3>
+    <ul>
+      <li>About 50 BDD feature files, each behavior with a passing and a failing case.</li>
+      <li>Full test gate in about 90 seconds.</li>
+      <li>Designed to run on Cloudflare's $5-a-month Workers plan.</li>
+    </ul>
+    <ul class="chips"><li>Cloudflare Workers</li><li>D1</li><li>R2</li><li>Queues</li><li>Workers AI</li><li>Slack API</li><li>Cucumber BDD</li></ul>
+    <p class="limits"><strong>Limits:</strong> running as a staging pilot with sample data; not yet in production.</p>
+  </section>
+
+  <section id="personal-ops">
+    <h2>Multi-agent personal operations system</h2>
+    <p class="meta">2026 · 20+ agents</p>
+    <p class="lede">A team of AI agents runs a household's daily operations, and a person approves anything that goes out.</p>
+    <p class="arch">Router agent → specialist agents (chief of staff, research, tasks, email, notes, browser, job search) → shared report files → 7 AM briefing.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li>Routing rules send each request to one specialist agent, and scheduled routines run without a prompt.</li>
+      <li>Human approval is required before any email, message, or post is sent.</li>
+      <li>A queued, lock-protected browser-automation agent (Python, Chrome DevTools Protocol, automated tests) handles sites with no API.</li>
+      <li>A public job-board poller (Greenhouse, Lever, Ashby, Workday) and weather and nutrition pipelines retry and check themselves.</li>
+    </ul>
+    <h3>Numbers</h3>
+    <ul><li>More than 20 specialized agents, plus a daily 7 AM briefing on email, calendar, tasks, orders, weather, and job matches.</li></ul>
+    <ul class="chips"><li>Python</li><li>Chrome DevTools Protocol</li><li>browser-use</li><li>Scheduled routines</li></ul>
+    <p class="limits"><strong>Limits:</strong> built for one household. Outgoing messages always wait for a person, by design.</p>
+  </section>
+
+  <section id="pi-toolbag">
+    <h2>pi-toolbag: CTX long-horizon focus and LLM failover for coding agents</h2>
+    <p class="meta">2026 · open source · <a href="https://github.com/redeemed2011/pi-toolbag">github.com/redeemed2011/pi-toolbag</a></p>
+    <p class="lede">Coding agents that stay on task for the long haul and keep working when a model provider fails.</p>
+    <p class="arch">Extensions for the Pi coding agent: CTX rebuilds working context after each compaction, and a shared failover library replays failed requests on the next model.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li><strong>CTX</strong> keeps a coding agent focused through tens of thousands of context compactions without stopping it from useful exploration. It rebuilds context from typed records within a fixed token budget, with no extra model call.</li>
+      <li>Project rules are shared across sessions only after an explicit bind that a person confirms, so an agent's passing notes never become rules on their own.</li>
+      <li>Same-session failover switches on quota, timeout, safety errors, and stalled streams, and never on auth errors or refusals. No user action is needed.</li>
+      <li>Usage-cap gates switch away before a model hits its limit and switch back once usage recovers.</li>
+    </ul>
+    <h3>Numbers</h3>
+    <ul><li>Tens of thousands of compactions with the agent still on task.</li></ul>
+    <ul class="chips"><li>TypeScript</li><li>Pi coding agent</li><li>Vitest</li><li>BDD</li></ul>
+    <p class="limits"><strong>Limits:</strong> built for the Pi coding agent. CTX uses typed records, not embeddings or similarity search.</p>
+  </section>
+
+  <section id="job-search">
+    <h2>AI job-search pipeline</h2>
+    <p class="meta">2026 · scheduled agent</p>
+    <p class="lede">Every weekday morning, the right roles show up already filtered and sorted by status.</p>
+    <div class="shots">
+      <figure><img src="images/job-pipeline-1.png" alt="Job Pipeline page: title, contents list, and search rules" width="430" loading="lazy"><figcaption>The pipeline page and its search rules.</figcaption></figure>
+      <figure><img src="images/job-pipeline-2.png" alt="Job Pipeline page: two role cards with company and pay blurred" width="430" loading="lazy"><figcaption>Role cards. Company names and pay are blurred.</figcaption></figure>
+    </div>
+    <p class="arch">Scheduled agent → job-board APIs and careers-site readers → filter rules → status-grouped web page. Blocked sites → browser agent.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li>Filters by level, individual-contributor track, location, and pay, and shows why each dropped role was dropped.</li>
+      <li>Reads public job feeds directly, and sends only sites that block automation to the browser agent on a home server.</li>
+      <li>One mobile-friendly card per role, grouped by status, so the whole search fits on a phone.</li>
+    </ul>
+    <ul class="chips"><li>Python</li><li>Greenhouse, Lever, Ashby, Workday APIs</li><li>Browser agent</li></ul>
+    <p class="limits"><strong>Limits:</strong> some sites block automated reads, so the browser agent or a person still reads those.</p>
+  </section>
+
+  <section id="puppy-search">
+    <h2>AI-assisted puppy search</h2>
+    <p class="meta">2026 · research agent</p>
+    <p class="lede">A daily search across shelters, rescues, and breeders, with an alert when the right dog appears.</p>
+    <div class="shots">
+      <figure><img src="images/dog-search-1.png" alt="Dog search page: criteria and a lead card with a black Lab puppy photo; source, price, and contact blurred" width="430" loading="lazy"><figcaption>Criteria and a lead card. Sources, prices, and contacts are hidden. Listing photo: <a href="https://commons.wikimedia.org/wiki/File:Black_Labrador_Pup.jpg">John Schanlaub</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>, via Wikimedia Commons.</figcaption></figure>
+      <figure><img src="images/dog-search-2.png" alt="Dog search page: excerpt from the temperament test guide" width="430" loading="lazy"><figcaption>An excerpt from the sourced temperament-test guide.</figcaption></figure>
+    </div>
+    <p class="arch">Scheduled research agent → shelter, rescue, and breeder sites → priority-ranked photo-card page and alerts. Blocked sites → browser agent.</p>
+    <h3>Key decisions</h3>
+    <ul>
+      <li>Runs every evening and on demand against one written dog profile.</li>
+      <li>Ranks rescue and shelter dogs ahead of breeders and private listings, and alerts when a match becomes available.</li>
+      <li>Pairs the search with a sourced guide to temperament checks at a visit.</li>
+    </ul>
+    <h3>Numbers</h3>
+    <ul><li>39 trainer and veterinary-behaviorist sources in the temperament guide.</li></ul>
+    <p class="limits"><strong>Limits:</strong> it only reads listings. It never contacts a shelter or breeder.</p>
+  </section>
+
+  <section id="models">
+    <h2>Models I use and how</h2>
+    <p class="meta">Each model has a specific job, plus a fallback when it fails.</p>
+    <div class="model"><p><strong>Coding:</strong> xAI's Grok Build coding agent, run through my own sandboxed launcher, and the Pi coding agent with pi-toolbag. When SuperGrok subscription capacity runs out, Pi switches to a backup model automatically.</p></div>
+    <div class="model"><p><strong>Receipt reading (Cloudflare Workers AI):</strong> Llama 4 Scout 17B, Mistral Small 3.1 24B, and Llama 3.2 11B Vision read each receipt in parallel, and each field is decided by majority vote.</p></div>
+    <div class="model"><p><strong>Photo or document?</strong> Llama 3.2 11B Vision plus ResNet-50 decide whether an upload is a document to read in full or a photo to describe.</p></div>
+    <div class="model"><p><strong>Voice notes:</strong> Whisper large-v3-turbo transcribes, with Deepgram Nova-3 as the fallback.</p></div>
+    <div class="model"><p><strong>Browser agent:</strong> GLM-5.3 Flash by default. On a stall it moves down a chain: DeepSeek V4.1 Flash for read-only jobs, Claude Sonnet 5.5 then Claude Opus 5.5 for normal jobs. DeepSeek takes over a human check if a Claude model refuses it.</p></div>
+  </section>
+
+  <section id="stack">
+    <h2>Stack</h2>
+    <div class="group"><h3>Languages</h3><ul class="chips"><li>Python</li><li>TypeScript / Node.js</li><li>Go</li><li>Bash</li></ul></div>
+    <div class="group"><h3>AI and agents</h3><ul class="chips"><li>Grok</li><li>Claude</li><li>GPT</li><li>Gemini</li><li>GLM</li><li>Llama</li><li>Workers AI</li><li>Agent orchestration</li><li>Guardrails</li></ul></div>
+    <div class="group"><h3>Cloud and platform</h3><ul class="chips"><li>Cloudflare Workers, D1, R2, Queues</li><li>AWS EKS</li><li>Kubernetes</li><li>Karpenter</li><li>Terraform</li><li>Kyverno / OPA</li></ul></div>
+    <div class="group"><h3>Testing and delivery</h3><ul class="chips"><li>BDD / Cucumber</li><li>Vitest</li><li>GitHub Actions</li><li>Auto-rollback deploys</li></ul></div>
+    <div class="group"><h3>Observability</h3><ul class="chips"><li>Grafana</li><li>Prometheus / Thanos</li><li>SLOs</li></ul></div>
+  </section>
+
+  <footer>
+    <p>Open-source contributions: pi-hashline-edit-pro (input-validation fix) and a durable-pi fork (Grok model integration).</p>
+    <p>Screenshots use placeholder data. Names, pay, prices, and contact details are hidden.</p>
+    <p><a href="https://www.linkedin.com/in/samb1/">LinkedIn</a> · <a href="https://github.com/redeemed2011">GitHub</a> · Updated October 2026</p>
+  </footer>
+</main>
+</body>
+</html>
