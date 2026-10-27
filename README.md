@@ -1,6 +1,6 @@
 # AI projects portfolio
 
-A one-page static site listing Sam Beckwith III's AI projects, served by GitHub Pages at https://redeemed2011.github.io/ from the `main` branch. The URL never changes. An update is a commit and push to `main`, and GitHub Pages republishes it in a minute or two. There is no custom domain.
+A one-page static site listing Sam Beckwith III's AI projects, served by GitHub Pages at https://redeemed2011.github.io/ from the `master` branch. The URL never changes. An update is a commit and push to `master`, and GitHub Pages republishes it in a minute or two. There is no custom domain.
 
 ## Conventions
 
@@ -12,11 +12,13 @@ A one-page static site listing Sam Beckwith III's AI projects, served by GitHub 
 
 ### Section order
 
-1. Header: name, role, a one-line hero, a short supporting line, LinkedIn and GitHub buttons, a strip of up to 3 real numbers, and section links.
-2. Project cards, strongest first: shop assistant, multi-agent system, pi-toolbag (CTX and failover), job search, puppy search.
-3. Models I use and how.
-4. Stack, as grouped chips. Never skill bars or percentages.
-5. Footer: open-source contributions, the screenshot note, links, and the "Updated" month.
+1. Header: name, role and years of experience, a one-line hero, a short supporting line, LinkedIn and GitHub buttons, a strip of up to 3 real numbers, and section links.
+2. Full-time work: a short intro, then cards ordered by year, newest first, each with its year range in the meta line (for example "2024–present · full-time"). Cards: AI work factory (ticket to pull request), AI agents for infrastructure work, Kubernetes platform reliability at 24,000+ pods, self-service infrastructure-as-code platform, 6x faster CI/CD and an internal developer platform, internal developer platform and zero-downtime Kubernetes migration. No employer names, job titles, locations, code, or screenshots.
+3. Side projects: AI garage operations assistant and build tracker (for a vehicle build and repair garage), pi-toolbag (CTX and failover), coding-agent harness.
+4. Personal projects: multi-agent personal operations system, job search, puppy search, daily food and activity logging agents.
+5. Models I use and how.
+6. Stack, as grouped chips. Never skill bars or percentages.
+7. Footer: open-source contributions, the screenshot note, links, and the "Updated" month.
 
 ### Card structure
 
@@ -31,7 +33,7 @@ Every project card uses these fields, in this order, skipping any it doesn't hav
 7. Stack chips (`.chips`), 3 to 7 per card.
 8. Limits (`.limits`): one honest line.
 
-Keep the copy plain and concrete, and lead with impact. No hype words, no "passionate" bio. Say Sam designed and built the work. Don't list work that is still in development. No tables anywhere. The page is mobile-first and must not scroll sideways at 390px.
+Keep the copy plain and concrete, and lead with impact. No hype words, no "passionate" bio. Side and personal projects say Sam designed and built them. Full-time cards use the resume's own verbs, or "designed and built" where Sam confirms it. Never say "led" or "directed". Don't list work that is still in development. No tables anywhere. The page is mobile-first and must not scroll sideways at 390px.
 
 ### Image rules
 
@@ -48,6 +50,8 @@ Keep the copy plain and concrete, and lead with impact. No hype words, no "passi
 - The only contact links are LinkedIn (https://www.linkedin.com/in/samb1/) and GitHub (https://github.com/redeemed2011).
 - Every number must come from a real source: repo docs, tests, configs, Sam's resume, or Sam himself. Never estimate or round up a metric. If a card has no real number, it shows none.
 - No secrets, keys, tokens, or internal hostnames, in the page or in the repo.
+- Sam's rule (2026-10-27): "anything that would be added to the portfolio site should be blurred out or anonymized to stay within EULA."
+- Third-party data (stock figures, company data, news headlines, job postings) must be blurred or replaced with made-up sample values before it goes on the site.
 
 ### Preview locally
 
@@ -61,4 +65,4 @@ Then open http://localhost:8000/. Check it at a phone width (390px) and a deskto
 
 ### Publishing
 
-Git Sync does every commit and push to `main`. No other bot or person pushes this repo. Every change is previewed and approved before it is pushed.
+Git Sync does every commit and push to `master`. No other bot or person pushes this repo. Every change is previewed and approved before it is pushed.
