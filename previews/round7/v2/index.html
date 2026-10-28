@@ -188,6 +188,9 @@ footer a{color:var(--soft)}
 .v2 .article p.body-p{position:relative;counter-increment:para;margin-bottom:28px}
 .v2 .article p.body-p::before{content:counter(para,decimal-leading-zero);position:absolute;left:-44px;top:.3em;width:30px;text-align:center;font:600 .66rem/1.6 var(--mono);color:var(--orange);background:var(--bg);padding:2px 0}
 @media (min-width:1024px){.v2 .article{padding-left:214px;max-width:calc(68ch + 214px);--rx:187px}.v2 .article p.body-p::before{left:-42px}}
+/* My approach as a pull quote (from v3): a large orange opening quote mark and larger text, no box */
+.v2 .approach .txt{position:relative;padding-left:26px;font:500 1.06rem/1.6 var(--sans)}
+.v2 .approach .txt::before{content:"\201C";position:absolute;left:-2px;top:-8px;font:800 2.6rem/1 var(--display);color:var(--orange)}
 </style>
 </head>
 <body class="v2">
