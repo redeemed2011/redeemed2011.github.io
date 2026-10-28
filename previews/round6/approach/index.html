@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Start from the goal · Sam Beckwith III</title>
 <meta name="description" content="Start from the goal: how Sam Beckwith III approaches agentic engineering. Design preview.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3ESB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='13' font-weight='700' text-anchor='middle' fill='white'%3ESB3%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <style>
@@ -20,12 +20,8 @@ a{color:var(--amber);text-underline-offset:3px}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* header */
 .site-head{position:sticky;top:0;z-index:20;background:#15110e;border-bottom:1px solid var(--line)}
-.ghost-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.ghost{position:absolute;left:max(12px,calc((100% - 1140px)/2 + 12px));top:50%;transform:translateY(-50%);margin:0;white-space:nowrap;
- font:800 clamp(2.3rem,6.4vw,4.4rem)/1 var(--display);letter-spacing:-.03em;color:#f4ede6;opacity:0;transition:opacity .35s ease}
-.site-head.scrolled .ghost{opacity:.1}
 .head-in{position:relative;max-width:1140px;margin:0 auto;padding:0 16px;height:58px;display:flex;align-items:center;gap:10px}
-.mark{flex:none;width:32px;height:32px;border-radius:7px;display:grid;place-items:center;font:600 .78rem var(--mono);color:var(--peach);border:1px solid var(--line2);background:var(--bg2);text-decoration:none}
+.mark{flex:none;min-width:32px;padding:0 6px;height:32px;border-radius:7px;display:grid;place-items:center;font:600 .78rem var(--mono);color:var(--peach);border:1px solid var(--line2);background:var(--bg2);text-decoration:none}
 .nav{display:none}
 .nav a{font:500 .88rem var(--sans);color:var(--muted);text-decoration:none;padding:18px 0 16px;border-bottom:2px solid transparent}
 .nav a:hover{color:var(--text)}
@@ -43,7 +39,7 @@ a{color:var(--amber);text-underline-offset:3px}
 .btn:hover{background:#fb8a3c;border-color:#fb8a3c}
 .btn.alt{color:var(--text);background:var(--bg2);border-color:var(--line2)}
 .btn.alt:hover{border-color:var(--peach);background:var(--bg2)}
-@media (min-width:1024px){.menu{display:none}.nav{display:flex;gap:24px;margin-left:10px}.head-in{padding:0 32px;gap:14px}.ghost{left:max(32px,calc((100% - 1140px)/2 + 32px))}}
+@media (min-width:1024px){.menu{display:none}.nav{display:flex;gap:24px;margin-left:10px}.head-in{padding:0 32px;gap:14px}}
 /* layout */
 .wrap{max-width:1140px;margin:0 auto;padding:0 16px}
 @media (min-width:720px){.wrap{padding:0 32px}}
@@ -148,8 +144,8 @@ footer a{color:var(--soft)}
 </style>
 </head>
 <body>
-<header class="site-head"><div class="ghost-wrap" aria-hidden="true"><p class="ghost">Sam Beckwith III</p></div><div class="head-in">
-<a class="mark" href="../#top" aria-label="Sam Beckwith III, back to top">SB</a>
+<header class="site-head"><div class="head-in">
+<a class="mark" href="../#top" aria-label="Sam Beckwith III, back to top">SB3</a>
 <nav class="nav" aria-label="Sections"><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#personal-projects">Personal projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav>
 <details class="menu"><summary><span class="bars" aria-hidden="true"></span>Menu</summary><nav class="drop" aria-label="Sections, phone"><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#personal-projects">Personal projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav></details>
 <p class="links"><a class="btn" href="https://www.linkedin.com/in/samb1/">LinkedIn <span aria-hidden="true">↗</span></a><a class="btn alt" href="https://github.com/redeemed2011">GitHub <span aria-hidden="true">&lt;&gt;</span></a></p>
@@ -157,25 +153,20 @@ footer a{color:var(--soft)}
 <div class="wrap" id="top">
 <a class="back" href="../"><span aria-hidden="true">←</span> Back to the portfolio</a>
 <main class="article">
-<p class="eyebrow">~/approach</p>
-<h1 data-ghost-anchor>Start from the goal</h1>
+<h1>Start from the goal</h1>
 <p class="byline">Sam Beckwith III · Senior Site Reliability Engineer &amp; AI Engineer · October 2026</p>
-<p class="body-p">Goal hooks like /goal and Ralph loops are popular right now, and they are useful. You give an agent a target, and it keeps trying until the target looks met. For many tasks, that is enough. It also leaves quality to chance, because each pass only improves on the one before it.</p>
-<p class="body-p">I want results that are high quality every time, that my team can rely on, and that come out the same way on Monday as on Friday. To get there, I had to stop thinking about engineering one step at a time.</p>
-<p class="body-p">Iteration starts with what exists and asks how to make it a little better. I start with the end state and ask what it takes to reach it. Nobody reached space by asking how to make a plane fly higher. They asked how to get to the moon, and now the question is how to get to another planet. Each question led to a new kind of machine.</p>
-<p class="body-p">Speed only matters if I can trust the result. So I build agents I can trust: agents that write code, configuration, and web pages better than most engineers, and agents that review, critique, and find security holes in a report, a design, a document, a message, or a pull request better than most reviewers. Once agents carry that work, people can focus on the bigger picture and move the work forward at that level. That trust is what unlocks the gains a team needs to pull ahead.</p>
-<p class="body-p">My goal is 100x the quality and output from an engineering team without 100x the cost. Hiring more people won't reach that, and neither will doing the old process faster. It takes a new system and a new process, designed backward from the goal.</p>
-<p class="body-p">That system is concrete. Every job starts as a spec written from the ticket. LLM agents and deterministic code each do the steps they handle best. The workflow tests its own work, critic agents review it, and it fixes the gaps it finds before it opens a pull request. My PR review pipeline is accurate enough that my team relies on its feedback. My investigations pipeline finds the likely cause of an issue, then investigates in depth and returns a report. Intake pipelines check their own input, for example by having several models read each receipt and deciding each field by majority vote. Agents work in a sandbox with read-only access, so they run in parallel with no risk of accidental changes. When a model fails, the request goes to the next model in the chain.</p>
-<p class="body-p">The prompts matter less than the system around them, with rules for which step each agent owns, how the work gets checked, and when a person decides.</p>
-<a class="back" href="../"><span aria-hidden="true">←</span> Back to the portfolio</a>
+<p class="body-p">Agent loops like /goal and Ralph are popular right now, and they're useful. You give an agent a target, and it keeps trying until the target looks met. For many tasks, that is enough. But it's still a vibe loop. The agent usually decides when it's done, and each pass patches the last one, so the result is only as good as that loop happens to get.</p>
+<p class="body-p">I want results my team can rely on, at the same quality on Monday as on Friday. To get there, I stopped asking how to make the last attempt a little better and started asking what it takes to reach the result I want.</p>
+<p class="body-p">Nobody reached space by asking how to make a plane fly higher. They asked how to get to the moon, and that question needed a new kind of machine.</p>
+<p class="body-p">My moon is 100x the quality and output from an engineering team without 100x the cost. Hiring more people won't reach that, and neither will doing the old process faster. It takes a new way of working, designed backward from the goal.</p>
+<p class="body-p">Here's what that looks like in practice. Every job starts as a spec written from the ticket. Deterministic code runs the steps that must come out the same every time, and LLM agents handle the steps that need judgment. The workflow tests its own work, critic agents review it, and it fixes the gaps it finds before it opens a pull request. My team relies on my PR review pipeline for its review feedback. My investigations pipeline finds the likely cause of an issue fast, then digs deeper and returns a report. In my garage assistant, several models read each receipt and vote on each field, so one model's misread doesn't get through. Agents work in a sandbox with read-only access to cloud infrastructure and clusters, so many can run at once and none can change production by accident. When a model fails, the request goes to the next model in the chain.</p>
+<p class="body-p">Speed only matters if I can trust the result. So I build agents I can trust. They write code, configuration, and web designs better than most engineers. They review and critique work, find security vulnerabilities, and give useful feedback on reports, designs, documents, messages, and planned changes before they merge. Trust is what lets me hand agents real work, and handing them real work is how a team beats its competition.</p>
+<p class="body-p">The prompts matter less than the system around them: which step each agent owns, how the work gets checked, and when a person decides. Get that right, and people can stop checking every step and spend their time on the bigger picture.</p><a class="back" href="../"><span aria-hidden="true">←</span> Back to the portfolio</a>
 </main>
-<footer><p>Screenshots use made-up example data in place of names, prices, and contact details.</p><p><a href="https://www.linkedin.com/in/samb1/">LinkedIn</a> · <a href="https://github.com/redeemed2011">GitHub</a> · Updated October 2026</p></footer>
+<footer><p><a href="https://www.linkedin.com/in/samb1/">LinkedIn</a> · <a href="https://github.com/redeemed2011">GitHub</a> · Updated October 2026</p></footer>
 </div>
 <script>
-(()=>{const head=document.querySelector('.site-head'),anchor=document.querySelector('[data-ghost-anchor]');
-const upd=()=>{const b=anchor.getBoundingClientRect().bottom;head.classList.toggle('scrolled',b<head.offsetHeight)};
-addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
-const menu=document.querySelector('.menu');document.querySelectorAll('.drop a').forEach(a=>a.addEventListener('click',()=>menu.removeAttribute('open')));
+(()=>{const menu=document.querySelector('.menu');document.querySelectorAll('.drop a').forEach(a=>a.addEventListener('click',()=>menu.removeAttribute('open')));
 document.addEventListener('click',e=>{if(menu.open&&!menu.contains(e.target))menu.removeAttribute('open')});
 })();</script>
 </body>
