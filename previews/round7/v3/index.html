@@ -148,17 +148,17 @@ footer a{color:var(--soft)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 <style>
-/* round7 v3: hybrid. Hero tiles stay as cards. Numbered ~/ section headers from round4-1, a full-width metallic rule from round3-4, and open project rows with round3-2's hover glow plus a gradient left edge like round5's lead line. */
+/* round7 v3: hybrid. Hero tiles stay as cards. Numbered ~/ section headers from round4-1, a full-width metallic rule from round3-4, and open project rows with a faint rounded hover tint (softened from round3-2) plus a gradient left edge like round5's lead line. */
 body.v3{--chrome:linear-gradient(90deg,transparent,#46352a 12%,#fdba74 40%,#9a8a7b 60%,#fed7aa 78%,#46352a 92%,transparent);counter-reset:area}
 .v3 .area{counter-increment:area}
 .v3 .ahead{position:relative;border-bottom:0;padding:0 0 16px;margin:0 0 4px}
 .v3 .ahead::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--chrome);opacity:.8}
 .v3 .ahead h2::before{content:"[" counter(area,decimal-leading-zero) "] ";color:var(--soft);font-weight:500;font-size:.7em;vertical-align:.12em}
-.v3 .card{position:relative;margin:0;padding:30px 4px 32px 22px;background:none;border:0;border-radius:0;transition:background .3s ease}
+.v3 .card{position:relative;margin:0;padding:30px 4px 32px 22px;background:none;border:0;border-radius:16px;transition:background .3s ease}
 .v3 .card+.card::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--chrome);opacity:.4}
 .v3 .card::before{content:"";position:absolute;left:0;top:30px;bottom:32px;width:3px;border-radius:3px;background:linear-gradient(var(--orange),var(--rust) 55%,rgba(194,65,12,0));transition:box-shadow .3s ease}
-.v3 .card:hover{background:linear-gradient(90deg,rgba(249,115,22,.06),transparent 55%)}
-.v3 .card:hover::before{box-shadow:0 0 14px rgba(249,115,22,.6)}
+.v3 .card:hover{background:rgba(249,115,22,.035)}
+.v3 .card:hover::before{box-shadow:0 0 4px rgba(249,115,22,.3)}
 .v3 .lead{border-left:0;padding-left:0}
 .v3 .sub{padding-left:0}
 .v3 .approach{background:none;border:0;border-radius:0;margin:8px 0 10px;padding:6px 0 18px 22px;position:relative}
