@@ -143,57 +143,53 @@ footer a{color:var(--soft)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 <style>
-/* round7 v2: year rail. A gutter rail with year markers like round3-2's list rows (meta in a left column), the round4-1 timeline's gradient line and square dots, and round3-4's hairline rules between projects. */
-body.v2{--hair:linear-gradient(90deg,transparent,#46352a 10%,#fdba74 42%,#9a8a7b 62%,#fed7aa 80%,#46352a 94%,transparent)}
-.v2 .ahead{position:relative;border-bottom:0;padding:0 0 14px 28px;margin:0}
-.v2 .ahead::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;border-radius:4px;background:var(--orange);box-shadow:0 0 12px rgba(249,115,22,.55)}
-.v2 .card{position:relative;margin:0;padding:30px 0 30px 28px;background:none;border:0;border-radius:0}
-.v2 .card::before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(var(--rust),rgba(194,65,12,.18));box-shadow:0 0 8px rgba(249,115,22,.25)}
-.v2 .card::after{content:"";position:absolute;left:0;top:32px;width:14px;height:14px;border-radius:4px;background:#2a1a10;border:1px solid var(--orange)}
-.v2 .card+.card{background:var(--hair) 28px 0/calc(100% - 28px) 1px no-repeat}
+/* round7 v2 (revised): year rail. One continuous gradient line starts in each section header's glowing box and runs unbroken through the section, with round4-1 style square nodes per project and a larger gap in place of rules between projects. Gutter column with years from round3-2's list rows. */
+.v2 .area{position:relative;--rx:6px;--pt:0px}
+.v2 .area::before{content:"";position:absolute;left:var(--rx);top:calc(var(--pt) + 14px);bottom:0;width:2px;background:linear-gradient(var(--orange),var(--rust) 45%,rgba(194,65,12,.4));box-shadow:0 0 8px rgba(249,115,22,.25)}
+.v2 .ahead{position:relative;z-index:1;border-bottom:0;padding:0 0 18px 28px;margin:0}
+.v2 .ahead::before{content:"";position:absolute;left:calc(var(--rx) - 6px);top:7px;width:14px;height:14px;border-radius:4px;background:var(--orange);box-shadow:0 0 12px rgba(249,115,22,.55)}
+.v2 .card{position:relative;z-index:1;margin:0;padding:26px 0 46px 28px;background:none;border:0;border-radius:0}
+.v2 .card::after{content:"";position:absolute;left:calc(var(--rx) - 6px);top:28px;width:14px;height:14px;border-radius:4px;background:#2a1a10;border:1px solid var(--orange)}
+.v2 .area>.card:last-child{padding-bottom:8px}
 .v2 .meta{font-size:.78rem;color:var(--peach)}
 .v2 .meta b{color:var(--orange)}
 .v2 .lead{border-left:0;padding-left:0}
 .v2 .sub{padding-left:0}
-.v2 .approach{position:relative;background:none;border:0;border-radius:0;margin:0;padding:22px 0 26px 28px}
-.v2 .approach::before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(rgba(194,65,12,.18),var(--rust))}
-.v2 .area>.oss,.v2 .area>.models,.v2 .area>.skills{position:relative;padding:12px 0 6px 28px;margin:0}
-.v2 .area>.oss::before,.v2 .area>.models::before,.v2 .area>.skills::before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(var(--rust),rgba(194,65,12,.18))}
-.v2 .oss{gap:0}
-.v2 .oss li{background:none;border:0;border-radius:0;padding:14px 0}
-.v2 .oss li+li{background:var(--hair) 0 0/100% 1px no-repeat}
+.v2 .approach{position:relative;z-index:1;background:none;border:0;border-radius:0;margin:0;padding:8px 0 30px 28px}
+.v2 .area>.approach:last-child{padding-bottom:8px}
+.v2 .area>.oss,.v2 .area>.models,.v2 .area>.skills{position:relative;z-index:1;padding:8px 0 8px 28px;margin:0}
+.v2 .oss{gap:22px}
+.v2 .oss li{background:none;border:0;border-radius:0;padding:0}
 .v2 .models li{border-left:0;padding-left:0}
-.v2 .skills{gap:0}
-.v2 .skc{background:none;border:0;border-radius:0;padding:14px 0}
-.v2 .skc+.skc{background:var(--hair) 0 0/100% 1px no-repeat}
-.v2 footer{border-top:0;background:var(--hair) 0 0/100% 1px no-repeat}
+.v2 .skills{gap:22px}
+.v2 .skc{background:none;border:0;border-radius:0;padding:0}
+.v2 footer{border-top:0;margin-top:72px}
 @media (min-width:1024px){
+ .v2 .area{--rx:187px}
  .v2 .ahead,.v2 .card,.v2 .approach,.v2 .area>.oss,.v2 .area>.models,.v2 .area>.skills{padding-left:214px}
- .v2 .ahead::before{left:181px}
- .v2 .card::before,.v2 .approach::before,.v2 .area>.oss::before,.v2 .area>.models::before,.v2 .area>.skills::before{left:187px}
- .v2 .card::after{left:181px;top:38px}
- .v2 .card{display:grid;grid-template-columns:minmax(0,1fr);padding-top:34px;padding-bottom:36px}
- .v2 .card+.card{background-position:214px 0;background-size:calc(100% - 214px) 1px}
- .v2 .card>.meta{position:absolute;left:0;top:34px;width:160px;text-align:right;margin:0;font-size:.8rem;line-height:1.55}
+ .v2 .card{padding-top:30px;padding-bottom:60px}
+ .v2 .card::after{top:34px}
+ .v2 .card>.meta{position:absolute;left:0;top:30px;width:160px;text-align:right;margin:0;font-size:.8rem;line-height:1.55}
  .v2 .card>.meta a{overflow-wrap:anywhere}
  .v2 .card>.meta b{display:block}
- .v2 .oss{grid-template-columns:repeat(3,1fr);column-gap:28px}.v2 .oss li+li{background:none}
- .v2 .skills{column-gap:36px}.v2 .skc:nth-child(2){background:none}
+ .v2 .oss{grid-template-columns:repeat(3,1fr);column-gap:28px}
+ .v2 .skills{column-gap:36px}
 }
-/* article: a gutter rail with numbered paragraphs */
-.v2 .article{position:relative;padding-left:44px;counter-reset:para}
-.v2 .article::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(var(--orange),var(--rust) 50%,rgba(194,65,12,.15));box-shadow:0 0 8px rgba(249,115,22,.25)}
-.v2 .article .byline{border-bottom:0;background:var(--hair) 0 100%/100% 1px no-repeat}
-.v2 .article p.body-p{position:relative;counter-increment:para}
+/* article: the same rail, starting in a glowing box beside the title, with numbered paragraphs as nodes */
+.v2 .article{position:relative;padding-left:44px;counter-reset:para;--rx:14px}
+.v2 .article::before{content:"";position:absolute;left:var(--rx);top:45px;bottom:0;width:2px;background:linear-gradient(var(--orange),var(--rust) 45%,rgba(194,65,12,.4));box-shadow:0 0 8px rgba(249,115,22,.25)}
+.v2 .article::after{content:"";position:absolute;left:calc(var(--rx) - 6px);top:38px;width:14px;height:14px;border-radius:4px;background:var(--orange);box-shadow:0 0 12px rgba(249,115,22,.55)}
+.v2 .article .byline{border-bottom:0;padding-bottom:8px}
+.v2 .article p.body-p{position:relative;counter-increment:para;margin-bottom:28px}
 .v2 .article p.body-p::before{content:counter(para,decimal-leading-zero);position:absolute;left:-44px;top:.3em;width:30px;text-align:center;font:600 .66rem/1.6 var(--mono);color:var(--orange);background:var(--bg);padding:2px 0}
-@media (min-width:1024px){.v2 .article{padding-left:214px;max-width:calc(68ch + 214px)}.v2 .article::before{left:187px}.v2 .article p.body-p::before{left:-42px}}
+@media (min-width:1024px){.v2 .article{padding-left:214px;max-width:calc(68ch + 214px);--rx:187px}.v2 .article p.body-p::before{left:-42px}}
 </style>
 </head>
 <body class="v2">
 <header class="site-head"><div class="head-in">
 <a class="mark" href="../#top" aria-label="Sam Beckwith III, back to top">SB3</a>
-<nav class="nav" aria-label="Sections"><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#personal-projects">Personal projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav>
-<details class="menu"><summary><span class="bars" aria-hidden="true"></span>Menu</summary><nav class="drop" aria-label="Sections, phone"><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#personal-projects">Personal projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav></details>
+<nav class="nav" aria-label="Sections"><a href="../#approach">Approach</a><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#personal-projects">Personal projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav>
+<details class="menu"><summary><span class="bars" aria-hidden="true"></span>Menu</summary><nav class="drop" aria-label="Sections, phone"><a href="../#approach">Approach</a><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#personal-projects">Personal projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav></details>
 <p class="links"><a class="btn" href="https://www.linkedin.com/in/samb1/">LinkedIn <span aria-hidden="true">↗</span></a><a class="btn alt" href="https://github.com/redeemed2011">GitHub <span aria-hidden="true">&lt;&gt;</span></a></p>
 </div></header>
 <div class="wrap" id="top">
