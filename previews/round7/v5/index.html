@@ -211,6 +211,10 @@ html:has(body.v5){background:#0d0b0a}
 .v5 .ahead h2 .br{color:var(--soft);letter-spacing:0}
 .v5 .ahead h2::after{content:"";flex:1;min-width:24px;height:1px;background:var(--line2)}
 .v5 .ahead p{margin:0;color:var(--muted);font-size:.93rem}
+
+/* v5: tech chips belong to their project: tight under the content (no trailing list gap), with the large gap after them, not before. */
+.v5 .card .pts li:last-child{margin-bottom:0}
+.v5 .card>.chips{margin-top:12px}
 </style>
 </head>
 <body class="v5">

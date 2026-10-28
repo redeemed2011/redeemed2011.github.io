@@ -169,6 +169,10 @@ footer a{color:var(--soft)}
 /* the menu has seven items with My approach: keep each on one line at narrow desktop widths */
 .v6 .nav a{white-space:nowrap}
 @media (min-width:1024px) and (max-width:1199px){.v6 .nav{gap:16px}.v6 .nav a{font-size:.84rem}}
+
+/* v6: tech chips belong to their project: tight under the content (no trailing list gap), with the large gap after them, not before. */
+.v6 .card .pts li:last-child{margin-bottom:0}
+.v6 .card>.chips{margin-top:12px}
 </style>
 </head>
 <body class="v6">

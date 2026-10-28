@@ -186,6 +186,11 @@ footer a{color:var(--soft)}
 /* My approach as a pull quote (from v3): a large orange opening quote mark and larger text, no box */
 .v2 .approach .txt{position:relative;padding-left:26px;font:500 1.06rem/1.6 var(--sans)}
 .v2 .approach .txt::before{content:"\201C";position:absolute;left:-2px;top:-8px;font:800 2.6rem/1 var(--display);color:var(--orange)}
+@media (max-width:1023px){.v2 .card{padding-bottom:60px}}
+
+/* v2: tech chips belong to their project: tight under the content (no trailing list gap), with the large gap after them, not before. */
+.v2 .card .pts li:last-child{margin-bottom:0}
+.v2 .card>.chips{margin-top:12px}
 </style>
 </head>
 <body class="v2">

@@ -186,6 +186,7 @@ footer a{color:var(--soft)}
 /* My approach as a pull quote (from v3): a large orange opening quote mark and larger text, no box */
 .v4 .approach .txt{position:relative;padding-left:26px;font:500 1.06rem/1.6 var(--sans)}
 .v4 .approach .txt::before{content:"\201C";position:absolute;left:-2px;top:-8px;font:800 2.6rem/1 var(--display);color:var(--orange)}
+@media (max-width:1023px){.v4 .card{padding-bottom:60px}}
 
 /* round7 v4 additions over v2's continuous rail: plain section names that match the top menu, a display-font heading instead of mono ~/ paths, plain project names, and a short low-contrast rule between sections aligned to the content column. */
 .v4 .area{--pt:40px;--cx:28px;padding-top:var(--pt);margin-top:52px;background:linear-gradient(var(--line2),var(--line2)) var(--cx) 0/72px 1px no-repeat}
@@ -201,6 +202,10 @@ footer a{color:var(--soft)}
 /* the menu has seven items with My approach: keep each on one line at narrow desktop widths */
 .v4 .nav a{white-space:nowrap}
 @media (min-width:1024px) and (max-width:1199px){.v4 .nav{gap:16px}.v4 .nav a{font-size:.84rem}}
+
+/* v4: tech chips belong to their project: tight under the content (no trailing list gap), with the large gap after them, not before. */
+.v4 .card .pts li:last-child{margin-bottom:0}
+.v4 .card>.chips{margin-top:12px}
 </style>
 </head>
 <body class="v4">
