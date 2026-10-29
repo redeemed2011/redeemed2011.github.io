@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="site">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
 <meta property="og:image:alt" content="Sam Beckwith III, Senior Site Reliability Engineer and AI Engineer: I build AI agents that keep working when models fail.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c2410c'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='13' font-weight='700' text-anchor='middle' fill='white'%3ESB3%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <style>
 :root{--bg:#14100d;--bg2:#1b1511;--panel:#1a1410;--panel2:#211a15;--line:#30251d;--line2:#46352a;
@@ -150,14 +150,84 @@ footer a{color:var(--soft)}
 .article p.body-p{font-size:1.06rem;line-height:1.75;color:#e8ddd2;margin:0 0 20px}
 @media (min-width:720px){.article h1{font-size:3.6rem}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* round-8 design: open rows, v5 menu bar and hero, My approach as a pull-quote callout, bracketed section headers, divider between projects */
+html.site{--bg:#0d0b0a;--bg2:#15110e;--panel:#15110e;--line:#2a211b;--line2:#45362b}
+html.site .pg .site-head{background:rgba(13,11,10,.94)}
+.pg{--hf:"Space Grotesk",system-ui,sans-serif}
+.pg .head-in{max-width:1040px;height:52px}
+.pg .brand{font:700 .86rem var(--mono);color:var(--text);text-decoration:none;white-space:nowrap}
+.pg .brand span{color:var(--orange)}
+.pg .nav{margin-left:auto}
+.pg .nav a{font:500 .8rem var(--mono);padding:16px 0 14px;white-space:nowrap}
+.pg .menu{margin-left:auto}
+.pg .menu summary{font:500 .8rem var(--mono)}
+@media (min-width:1024px) and (max-width:1199px){.pg .nav{gap:16px}.pg .nav a{font-size:.76rem}}
+.pg .wrap{max-width:1040px}
+.pg h1{font:700 2.3rem/1.05 var(--hf);letter-spacing:-.03em;color:var(--text);background:none;-webkit-background-clip:border-box;background-clip:border-box;margin:0 0 8px}
+.pg .role{font:500 .8rem/1.5 var(--mono);color:var(--peach);margin:0 0 14px}
+.pg .hero .links{margin:0 0 18px;flex-wrap:wrap;gap:10px}
+.pg .pill{border-radius:6px;color:var(--peach);margin:0 0 12px}
+.pg .pill .dot{display:none}
+.pg .pill::before{content:"\203A";color:var(--orange)}
+.pg .say{font:600 1.4rem/1.28 var(--hf);letter-spacing:-.01em}
+.pg .tiles{gap:10px;grid-template-columns:1fr}
+.pg .tile{display:flex;flex-wrap:wrap;align-items:center;column-gap:10px;padding:12px 14px;border-radius:12px;background:var(--panel);border-color:var(--line2);font-size:.86rem;color:var(--soft)}
+.pg .tile strong{order:-3;margin:0 auto 2px 0;font:700 1.9rem/1.05 var(--mono);color:var(--orange);letter-spacing:-.02em}
+.pg .tile .tag{order:-2;margin:0;border-color:var(--line2);background:rgba(249,115,22,.08);color:var(--peach);border-radius:5px;padding:3px 7px;font-size:.6rem;letter-spacing:.14em}
+.pg .tile .lbl{order:-1;flex:0 0 100%;font:600 .95rem/1.4 var(--hf);letter-spacing:0;text-transform:none;color:var(--text);margin:2px 0}
+@media (min-width:720px){.pg h1{font-size:2.9rem}.pg .tiles{grid-template-columns:1fr 1fr}}
+@media (min-width:1024px){.pg .hero{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:start;padding:56px 0 12px}.pg h1{font-size:3.1rem}.pg .say{font-size:1.6rem}.pg .tiles{grid-template-columns:1fr}}
+.pg .article h1{font-size:2.5rem}
+@media (min-width:720px){.pg .article h1{font-size:3.3rem}}
+.pg .art-links{display:flex;flex-wrap:wrap;margin:8px 0 0;gap:10px}
+.pg .btn{font:500 .86rem var(--mono);padding:9px 16px;border-radius:10px;transition:background .2s,border-color .2s,color .2s}
+html.site .pg .btn{background:var(--orange);border-color:var(--orange);color:#1a0b03}
+html.site .pg .btn:hover{background:#fb8a3c;border-color:#fb8a3c}
+html.site .pg .btn.alt{background:transparent;color:var(--peach);border-color:rgba(249,115,22,.75)}
+html.site .pg .btn.alt:hover{background:rgba(249,115,22,.1)}
+.pg .callout{position:relative;margin:56px 0 0;padding:0;border:0;border-radius:0;background:none;max-width:860px}
+.pg .callout .eyebrow{font:500 .76rem var(--mono);color:var(--peach);letter-spacing:.06em;margin:0 0 8px}
+.pg .callout p.txt{margin:0;color:var(--text)}
+html.site .callout p.txt{position:relative;padding-left:30px;font:500 1.06rem/1.62 var(--sans)}
+html.site .callout p.txt::before{content:"\201C";position:absolute;left:-2px;top:-8px;font:800 2.7rem/1 var(--display);color:var(--orange)}
+.pg .area{margin-top:72px}
+.pg .card{position:relative;margin:0 0 76px;padding:0;background:none;border:0;border-radius:0}
+.pg .area>.card:last-child{margin-bottom:0}
+@media (min-width:860px){.pg .card{padding:0;margin-bottom:92px}}
+.pg .meta b{color:var(--orange)}
+.pg .oss{gap:22px}
+.pg .oss li{background:none;border:0;border-radius:0;padding:0}
+.pg .skills{gap:22px}
+.pg .skc{background:none;border:0;border-radius:0;padding:0}
+.pg .ahead{border-bottom:0;padding:0;margin:0 0 22px}
+.pg .ahead h2{display:flex;align-items:center;gap:12px;font:500 .86rem/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin:0 0 6px}
+.pg .ahead h2 .br{display:inline-block;color:var(--soft);letter-spacing:0}
+.pg .ahead h2::after{content:"";flex:1;min-width:24px;height:1px;background:var(--line2)}
+.pg .ahead p{margin:0;color:var(--muted);font-size:.93rem}
+html.site .pg .card{padding-bottom:44px;margin-bottom:44px;border-bottom:1px solid var(--line)}
+html.site .pg .area>.card:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+html.site .card>.chips{margin-top:18px}
+@keyframes r8brL{0%,100%{transform:none}35%,65%{transform:translateX(-6px);color:var(--orange)}}
+@keyframes r8brR{0%,100%{transform:none}35%,65%{transform:translateX(6px);color:var(--orange)}}
+html.site .ahead h2.tick .br:first-child{animation:r8brL 1.4s ease-in-out}
+html.site .ahead h2.tick .br:last-of-type{animation:r8brR 1.4s ease-in-out}
+@keyframes r8sweep{from{background-position:-90px 0,0 0}to{background-position:calc(100% + 90px) 0,0 0}}
+html.site .ahead h2::after{background:linear-gradient(90deg,transparent,var(--orange),transparent) -90px 0/90px 100% no-repeat,var(--line2)}
+html.site .ahead h2.tick::after{animation:r8sweep 1.8s ease-in-out}
+.pg .run.lp li,.pg .run.lp li .ok{transition:opacity .6s ease}
+.pg .hub.lp span{transition:border-color .5s,background-color .5s,color .5s,box-shadow .5s}
+.pg .hub.lp span.on{border-color:var(--orange);color:var(--text);background-color:rgba(249,115,22,.1)}
+.pg .hub.lp .core.on{background-color:rgba(249,115,22,.22);box-shadow:0 0 16px rgba(249,115,22,.45)}
+.pg .meta .pc{display:inline-block;margin-right:9px;font:500 .8rem/1 var(--mono);letter-spacing:0;color:var(--soft);opacity:.65;transition:color .4s,opacity .4s}
+html.site .pg .meta .pc{color:var(--orange);opacity:.45}
 </style>
 </head>
-<body>
+<body class="pg">
 <header class="site-head"><div class="head-in">
-<a class="mark" href="../#top" aria-label="Sam Beckwith III, back to top">SB3</a>
-<nav class="nav" aria-label="Sections"><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#personal-projects">Personal projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav>
-<details class="menu"><summary><span class="bars" aria-hidden="true"></span>Menu</summary><nav class="drop" aria-label="Sections, phone"><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#personal-projects">Personal projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav></details>
-<p class="links"><a class="btn" href="https://www.linkedin.com/in/samb1/">LinkedIn <span aria-hidden="true">↗</span></a><a class="btn alt" href="https://github.com/redeemed2011">GitHub <span aria-hidden="true">&lt;&gt;</span></a></p>
+<a class="brand" href="../#top" aria-label="Sam Beckwith III, back to top">Sam Beckwith <span>III</span></a>
+<nav class="nav" aria-label="Sections"><a href="./" class="on" aria-current="page">My approach</a><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#personal-projects">Personal projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav>
+<details class="menu"><summary><span class="bars" aria-hidden="true"></span>Menu</summary><nav class="drop" aria-label="Sections, phone"><a href="./" class="on" aria-current="page">My approach</a><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#personal-projects">Personal projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav></details>
 </div></header>
 <div class="wrap" id="top">
 <a class="back" href="../"><span aria-hidden="true">←</span> Back to the portfolio</a>
@@ -173,6 +243,7 @@ footer a{color:var(--soft)}
 <p class="body-p">I want people out of the loop everywhere the human touch isn't needed: code, web design, documentation, email, CRM, project management, and the rest. Agents do the routine work. People make the calls that need judgment and approve what goes out. My team gets back the hours it spent on toil and puts them into work that needs a person.</p>
 <p class="body-p">The prompts matter less than the system around them: which step each agent owns, how the work gets checked, and when a person decides. Get that right, and people can stop checking every step and spend their time on the bigger picture.</p><a class="back" href="../"><span aria-hidden="true">←</span> Back to the portfolio</a>
 </main>
+<p class="links art-links"><a class="btn" href="https://www.linkedin.com/in/samb1/">LinkedIn <span aria-hidden="true">↗</span></a><a class="btn alt" href="https://github.com/redeemed2011">GitHub <span aria-hidden="true">&lt;&gt;</span></a></p>
 <footer><p><a href="https://www.linkedin.com/in/samb1/">LinkedIn</a> · <a href="https://github.com/redeemed2011">GitHub</a> · Updated October 2026</p></footer>
 </div>
 <script>
