@@ -6,8 +6,8 @@ A one-page static site listing Sam Beckwith III's AI projects, served by GitHub 
 
 ### File layout
 
-- `index.html`: the main page. CSS is inline in a `<style>` block, and two small inline scripts run the phone menu, the active nav link, and the section-header and diagram animations.
-- `approach/index.html`: the "Start from the goal" article, linked as "My approach". It repeats the same inline CSS and menu script.
+- `index.html`: the main page. CSS is inline in a `<style>` block, and two small inline scripts run the phone menu, the active nav link, the section-header animation, and the ticket-to-PR checklist animation.
+- `approach/index.html`: the "Start from the goal" article (page title "How I design agent pipelines"), linked as "My approach". It repeats the same inline CSS and menu script.
 - `images/`: every screenshot on the page, plus `og-image.png`, the link preview. There are no `css/` or `js/` folders.
 - `README.md`: this file.
 
@@ -21,11 +21,11 @@ The current design is round-8 v9: a dark terminal style with orange accents, dim
 
 ### Section order
 
-1. Header: name, role, LinkedIn and GitHub buttons, "12+ years in SRE and platform engineering", the one-line hero, a short intro, and highlight tiles (Ticket to PR, Team-trusted, 3x, 6x).
+1. Header: name, role ("Senior Site Reliability Engineer & AI Engineer", matching the resume), LinkedIn and GitHub buttons, "12+ years in SRE and platform engineering", the one-line hero ("I build internal AI agents and the platforms other engineers ship on."), a short intro, and four highlight tiles: Ticket to PR (agent pipeline), PR review (AI code review pipeline), 3x (my code and review contributions), and 6x (faster CI/CD).
 2. My approach: a short pull quote that links to `approach/`.
 3. Full-time work, newest first. No employer names, code, or screenshots.
-4. Side projects.
-5. Personal projects.
+4. Side projects: the garage assistant, pi-toolbag, and the coding-agent setup.
+5. Personal projects: one short card on the assistant team, with no household, family, or health details and no diagram.
 6. Open source.
 7. Models.
 8. Stack, as grouped chips. Never skill bars or percentages.
@@ -43,22 +43,25 @@ Every project card (`article.card`) uses these parts, in this order, skipping an
 6. "What it does" and "Why it matters": short bullet lists.
 7. Stack chips (`.chips`), 3 to 7 per card.
 
-Keep the copy plain and concrete, and lead with the outcome, then how it works. No hype words, no "passionate" bio. Side and personal projects say Sam designed and built them. Full-time cards may say Sam designed, led, and built the work: he owned it end to end and implemented it himself, with co-workers supporting (Sam, 2026-10-27). Never say "directed". Don't list work that is still in development. Use real numbers only. No tables anywhere. The page is phone-first: check it at 390px, and it must not scroll sideways.
+A card may add a short context line (`.sub`) after the headline that states the goal, what made it hard, or the main design choice.
+
+Keep the copy plain and concrete, and lead with the outcome, then how it works. No hype words, metaphors, coined labels, em dashes, or "not just X but Y". No "passionate" bio. Projects say "Designed and built". The one exception is the self-service IaC platform card, which says "Designed, led, and built", the resume wording Sam approved. Never say "directed". Say "my team" only for what the team actually uses, and don't claim company-wide reach without a confirmed number. Don't list work that is still in development. Use real numbers only. No tables anywhere. The page is phone-first: check it at 390px, and it must not scroll sideways.
 
 ### Image rules
 
 - Screenshots are made-up sample data, never real records. Rebuild the page with invented entries, replace every private field with placeholder blocks before rendering, then blur those spots so nothing can be recovered.
 - Fields that must be replaced or blurred: pay and prices, company and employer names, recruiter and people names, shelter, rescue, breeder and seller names, addresses and locations, phone numbers, emails, and contact details.
-- A real listing's photo is never used. An example listing photo must be a licensed stock photo placed inside the sample screenshot, with its credit in that screenshot's caption. `dog-search-1.png` uses "Black Labrador Pup" by John Schanlaub (CC BY 3.0, https://commons.wikimedia.org/wiki/File:Black_Labrador_Pup.jpg), cropped to fill the photo spot.
+- A real listing's photo is never used. An example listing photo must be a licensed stock photo placed inside the sample screenshot, with its credit in that screenshot's caption. No screenshot on the site uses a stock photo today.
 - Size: render at a 430px-wide viewport at 2× scale, which gives 860px-wide PNGs. Crop to one readable section at a time, about 600 to 1,000px tall, with a clean edge and no cut-off lines of text.
-- Where they live: every screenshot is a PNG in `images/`, named after its project with a number (for example `job-pipeline-2.png`). A replacement for a live image gets a suffix such as `-r6`. Today they are 860px wide and 710 to 2,052px tall, from 73 KB to 373 KB.
+- Where they live: every screenshot is a PNG in `images/`, named after its project with a number (for example `shop-1.png`). A replacement for a live image gets a suffix such as `-r6`. Today the only screenshot is `shop-1.png`, 860px wide.
+- No placeholder images, diagrams, or captions go live. If a diagram isn't final, leave it out.
 - Link preview: `images/og-image.png` is a 1200×630 PNG under 300 KB in the round-8 v9 style, with the name, role, hero line, and highlight tiles copied from the page. It is rendered from a throwaway HTML file with headless Chrome, and that helper is not committed. Both pages point `og:image` and `twitter:image` at `https://redeemed2011.github.io/images/og-image.png`. When the hero or tiles change, rebuild the image and update the meta tags to match.
 - Stock photos come only from a source whose license allows reuse, such as Wikimedia Commons (CC0, public domain, CC BY, CC BY-SA), Unsplash, or Pexels. Never use a listing's or breeder's photo. A stand-alone stock photo should be about 800px wide, as a JPEG under 200 KB. Credit the author, license, and source link in the caption.
 - Every image has alt text and a short caption.
 
 ### Privacy rules
 
-- No pay figures, company names, recruiter names, family details, addresses, phone numbers, or email addresses.
+- No pay figures, employer or company names, recruiter names, job searches, family or health details, pets' locations, addresses, phone numbers, or email addresses.
 - The only contact links are LinkedIn (https://www.linkedin.com/in/samb1/) and GitHub (https://github.com/redeemed2011).
 - Every number must come from a real source: repo docs, tests, configs, Sam's resume, or Sam himself. Never estimate or round up a metric. If a card has no real number, it shows none.
 - No secrets, keys, tokens, or internal hostnames, in the page or in the repo.
@@ -77,4 +80,4 @@ Then open http://localhost:8000/. Check it at a phone width (390px) and a deskto
 
 ### Publishing
 
-Git Sync does every commit and push to `master`. No other bot or person pushes this repo. Every change is previewed and approved before it is pushed.
+One designated publisher does every commit and push to `master`, and nobody else pushes this repo. Every change is previewed and approved before it is pushed.
