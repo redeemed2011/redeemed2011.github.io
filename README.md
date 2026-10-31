@@ -21,15 +21,14 @@ The current design is round-8 v9: a dark terminal style with orange accents, dim
 
 ### Section order
 
-1. Header: name, role ("AI Platform Engineer · Senior SRE". It describes the work, and the site never claims a job title Sam doesn't hold), LinkedIn and GitHub buttons, "12+ years in SRE and platform engineering", the one-line hero ("I build internal AI agents and platforms that change how engineering teams work."), a short intro, and four highlight tiles: Agent pipelines (agent pipelines), 254 (engineers make their own infrastructure changes), 3x (my engineering output), and 6x (faster CI/CD).
+1. Header: name, role ("Senior SRE · AI platform engineering". It describes the work, and the site never claims a job title Sam doesn't hold), LinkedIn and GitHub buttons, "12+ years in SRE and platform engineering", the one-line hero ("I build internal AI agents and platforms that change how engineering teams work."), a short intro, and four highlight tiles: Ticket to PR (agent pipelines, design to review), Self-service IaC (engineers ship their own infrastructure changes), 3x (my engineering output), and 6x (faster CI/CD).
 2. My approach: a short pull quote that links to `approach/`.
-3. Full-time work, newest first. No employer names, code, or screenshots.
-4. Side projects: the garage assistant, pi-toolbag, and the coding-agent setup.
-5. Personal projects: one short card on the assistant team, with no household, family, or health details and no diagram, then the AI job-search pipeline card.
-6. Open source.
-7. Models.
-8. Stack, as grouped chips. Never skill bars or percentages.
-9. Footer: the screenshot note, LinkedIn and GitHub links, and the "Updated" month.
+3. Full-time work, newest first: the ticket-to-PR pipeline, AI agents, the IaC platform, Kubernetes reliability, CI/CD, then the Kubernetes migration. No employer names, code, or screenshots.
+4. Side projects, one section: the garage assistant, pi-toolbag, the Grok CLI harness, the assistant team (no household, family, or health details and no diagram), and the AI job-search pipeline. There is no separate "Personal projects" section or nav link.
+5. Open source.
+6. Models.
+7. Stack, as grouped chips. Never skill bars or percentages.
+8. Footer: LinkedIn and GitHub links, and the "Updated" month.
 
 ### Card structure
 
@@ -47,7 +46,7 @@ A card may add a short context line (`.sub`) after the headline that states the 
 
 A card may also add a short "Limits:" line (`.limits`) after the two lists and before the chips, stating what the system does not cover.
 
-Keep the copy plain and concrete, and lead with the outcome, then how it works. No hype words, metaphors, coined labels, em dashes, or "not just X but Y". No "passionate" bio. Projects say "Designed and built". The one exception is the self-service IaC platform card, which says "Designed, led, and built", the resume wording Sam approved. Never say "directed". Say "my team" only for what the team actually uses, and don't claim company-wide reach without a confirmed number. Don't list work that is still in development. Use real numbers only. No tables anywhere. The page is phone-first: check it at 390px, and it must not scroll sideways.
+Keep the copy plain and concrete, and lead with the outcome, then how it works. No hype words, metaphors, coined labels, em dashes, or "not just X but Y". No "passionate" bio. Projects say "Designed and built". Never say "led" or "directed". Say "my team" only for what the team actually uses, and don't claim company-wide reach without a confirmed number. The IaC platform shows no engineer count and no percentage. The ticket-to-PR, incident, and research pipelines are separate pipelines that share tooling. Don't list work that is still in development. Use real numbers only. No tables anywhere. The page is phone-first: check it at 390px, and it must not scroll sideways.
 
 ### Image rules
 
