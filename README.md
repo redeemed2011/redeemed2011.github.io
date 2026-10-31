@@ -21,11 +21,11 @@ The current design is round-8 v9: a dark terminal style with orange accents, dim
 
 ### Section order
 
-1. Header: name, role ("Senior SRE · AI Platform Engineer". It describes the work, and the site never claims a job title Sam doesn't hold), LinkedIn and GitHub buttons, "12+ years in SRE and platform engineering", the one-line hero ("I build internal AI agents and platforms that change how engineering teams work."), a short intro, and four highlight tiles: Ticket to PR (agent pipeline), 254 (engineers make their own infrastructure changes), 3x (my engineering output), and 6x (faster CI/CD).
+1. Header: name, role ("Senior SRE · AI Platform Engineer". It describes the work, and the site never claims a job title Sam doesn't hold), LinkedIn and GitHub buttons, "12+ years in SRE and platform engineering", the one-line hero ("I build internal AI agents and platforms that change how engineering teams work."), a short intro, and four highlight tiles: Agent pipelines (agent pipelines), 254 (engineers make their own infrastructure changes), 3x (my engineering output), and 6x (faster CI/CD).
 2. My approach: a short pull quote that links to `approach/`.
 3. Full-time work, newest first. No employer names, code, or screenshots.
 4. Side projects: the garage assistant, pi-toolbag, and the coding-agent setup.
-5. Personal projects: one short card on the assistant team, with no household, family, or health details and no diagram.
+5. Personal projects: one short card on the assistant team, with no household, family, or health details and no diagram, then the AI job-search pipeline card.
 6. Open source.
 7. Models.
 8. Stack, as grouped chips. Never skill bars or percentages.
@@ -45,6 +45,8 @@ Every project card (`article.card`) uses these parts, in this order, skipping an
 
 A card may add a short context line (`.sub`) after the headline that states the goal, what made it hard, or the main design choice.
 
+A card may also add a short "Limits:" line (`.limits`) after the two lists and before the chips, stating what the system does not cover.
+
 Keep the copy plain and concrete, and lead with the outcome, then how it works. No hype words, metaphors, coined labels, em dashes, or "not just X but Y". No "passionate" bio. Projects say "Designed and built". The one exception is the self-service IaC platform card, which says "Designed, led, and built", the resume wording Sam approved. Never say "directed". Say "my team" only for what the team actually uses, and don't claim company-wide reach without a confirmed number. Don't list work that is still in development. Use real numbers only. No tables anywhere. The page is phone-first: check it at 390px, and it must not scroll sideways.
 
 ### Image rules
@@ -53,7 +55,7 @@ Keep the copy plain and concrete, and lead with the outcome, then how it works. 
 - Fields that must be replaced or blurred: pay and prices, company and employer names, recruiter and people names, shelter, rescue, breeder and seller names, addresses and locations, phone numbers, emails, and contact details.
 - A real listing's photo is never used. An example listing photo must be a licensed stock photo placed inside the sample screenshot, with its credit in that screenshot's caption. No screenshot on the site uses a stock photo today.
 - Size: render at a 430px-wide viewport at 2× scale, which gives 860px-wide PNGs. Crop to one readable section at a time, about 600 to 1,000px tall, with a clean edge and no cut-off lines of text.
-- Where they live: every screenshot is a PNG in `images/`, named after its project with a number (for example `shop-1.png`). A replacement for a live image gets a suffix such as `-r6`. Today there are two screenshots, both 860px wide: `shop-1.png` (the build board, made-up sample data) and `shop-2.png` (a Slack thread Sam supplied from the garage assistant's staging workspace). In `shop-2.png`, every person's name and the build links (URL and build id) are covered with placeholder blocks and blurred. Build names, such as "Beau Brown 59 Viking (Powerhouse)", stay readable at Sam's request (2026-10-31), and the phone status bar is cropped off.
+- Where they live: every screenshot is a PNG in `images/`, named after its project with a number (for example `shop-1.png`). A replacement for a live image gets a suffix such as `-r6`. Today there are three screenshots, all 860px wide: `shop-1.png` (the build board, made-up sample data), `job-pipeline-3.png` (the job-search company card, made-up sample company "Northwind Robotics", restored from commit 93303ca and cropped to the company card; the stock benchmark name and the layoffs.fyi link are covered with placeholder blocks and blurred), and `shop-2.png` (a Slack thread Sam supplied from the garage assistant's staging workspace). In `shop-2.png`, every person's name and the build links (URL and build id) are covered with placeholder blocks and blurred. Build names, such as "Beau Brown 59 Viking (Powerhouse)", stay readable at Sam's request (2026-10-31), and the phone status bar is cropped off.
 - No placeholder images, diagrams, or captions go live. If a diagram isn't final, leave it out.
 - Link preview: `images/og-image.png` is a 1200×630 PNG under 300 KB in the round-8 v9 style, with the name, role, hero line, and highlight tiles copied from the page. It is rendered from a throwaway HTML file with headless Chrome, and that helper is not committed. Both pages point `og:image` and `twitter:image` at `https://redeemed2011.github.io/images/og-image.png`. When the hero or tiles change, rebuild the image and update the meta tags to match.
 - Stock photos come only from a source whose license allows reuse, such as Wikimedia Commons (CC0, public domain, CC BY, CC BY-SA), Unsplash, or Pexels. Never use a listing's or breeder's photo. A stand-alone stock photo should be about 800px wide, as a JPEG under 200 KB. Credit the author, license, and source link in the caption.
@@ -62,6 +64,7 @@ Keep the copy plain and concrete, and lead with the outcome, then how it works. 
 ### Privacy rules
 
 - No pay figures, employer or company names, recruiter names, job searches, family or health details, pets' locations, addresses, phone numbers, or email addresses.
+- Exception (Sam, 2026-10-31): the AI job-search pipeline card is allowed. It still names no real companies, recruiters, or job boards, and shows nothing about what Sam has applied to.
 - The only contact links are LinkedIn (https://www.linkedin.com/in/samb1/) and GitHub (https://github.com/redeemed2011).
 - Every number must come from a real source: repo docs, tests, configs, Sam's resume, or Sam himself. Never estimate or round up a metric. If a card has no real number, it shows none.
 - No secrets, keys, tokens, or internal hostnames, in the page or in the repo.
