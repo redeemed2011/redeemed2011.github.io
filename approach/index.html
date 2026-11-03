@@ -227,6 +227,14 @@ html.site .ahead h2.tick::after{animation:r8sweep 1.8s ease-in-out}
 .pg .hub.lp .core.on{background-color:rgba(249,115,22,.22);box-shadow:0 0 16px rgba(249,115,22,.45)}
 .pg .meta .pc{display:inline-block;margin-right:9px;font:500 .8rem/1 var(--mono);letter-spacing:0;color:var(--soft);opacity:.65;transition:color .4s,opacity .4s}
 html.site .pg .meta .pc{color:var(--orange);opacity:.45}
+/* accessibility: 44 px tap targets, keyboard focus */
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.pg .brand{padding:14px 0}
+.pg .menu summary{min-height:44px}
+.pg .nav a{min-width:44px;text-align:center}
+.pg .btn{min-height:44px}
+.back{padding:14px 0;margin:14px 0 -14px}
+.oss strong a{display:inline-block;padding:14px 0;margin:-14px 0}
 </style>
 </head>
 <body class="pg">
@@ -236,7 +244,7 @@ html.site .pg .meta .pc{color:var(--orange);opacity:.45}
 <details class="menu"><summary><span class="bars" aria-hidden="true"></span>Menu</summary><nav class="drop" aria-label="Sections, phone"><a href="./" class="on" aria-current="page">My approach</a><a href="../#full-time">Full-time work</a><a href="../#side-projects">Side projects</a><a href="../#open-source">Open source</a><a href="../#models">Models</a><a href="../#stack">Stack</a></nav></details>
 </div></header>
 <div class="wrap" id="top">
-<a class="back" href="../"><span aria-hidden="true">←</span> Back to the portfolio</a>
+<nav aria-label="Breadcrumb"><a class="back" href="../"><span aria-hidden="true">←</span> Back to the portfolio</a></nav>
 <main class="article">
 <h1>Start from the goal</h1>
 <p class="byline">Sam Beckwith III · AI Platform Engineer and Senior SRE · October 2026</p>
@@ -249,7 +257,7 @@ html.site .pg .meta .pc{color:var(--orange);opacity:.45}
 <p class="body-p">Speed only helps if the team can trust the output. Agents also review designs, documents, and planned changes, and they flag security vulnerabilities before release.</p>
 <p class="body-p">The result is a different split of the work. Agents do the implementation, the investigation, and the routine parts of documentation and project tracking. People set the goals, make the design decisions, and approve what goes out. I think the same split applies to customer service, research, and finance, wherever the result can be checked.</p><a class="back" href="../"><span aria-hidden="true">←</span> Back to the portfolio</a>
 </main>
-<p class="links art-links"><a class="btn" href="https://www.linkedin.com/in/samb1/">LinkedIn <span aria-hidden="true">↗</span></a><a class="btn alt" href="https://github.com/redeemed2011">GitHub <span aria-hidden="true">&lt;&gt;</span></a></p>
+<nav aria-label="Profiles"><p class="links art-links"><a class="btn" href="https://www.linkedin.com/in/samb1/">LinkedIn <span aria-hidden="true">↗</span></a><a class="btn alt" href="https://github.com/redeemed2011">GitHub <span aria-hidden="true">&lt;&gt;</span></a></p></nav>
 <footer><p><a href="https://www.linkedin.com/in/samb1/">LinkedIn</a> · <a href="https://github.com/redeemed2011">GitHub</a> · Updated October 2026</p></footer>
 </div>
 <script>
